@@ -52,11 +52,6 @@ function callRecipeURL (){
     method: "GET"
   }).then(function(data) {
     
-    addLink = $('<a>').attr('href',data.sourceUrl).text(data.title)
-    var image = $('<img>').attr('src',data.image)
-    $('.test').append(addLink,image)
-    console.log("Test and Recipe ID " + recipeID)
-    console.log(data)
   }); 
 }
 /* if we want to try extract the recipe from the site instead of just linking to the site.
