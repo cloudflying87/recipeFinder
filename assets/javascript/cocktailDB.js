@@ -8,6 +8,7 @@ function displayButtons(drinks){
     var addDrinks = $("<button>")
     addDrinks.addClass("drink-btn")
     addDrinks.attr("drinkID", drinks[index].idDrink);
+    addDrinks.attr("index", index);
     var imgs = $("<img src="+ drinks[index].strDrinkThumb+">")
     var text = $("<div>").text(drinks[index].strDrink)
     addDrinks.append(text,imgs);
@@ -26,8 +27,15 @@ $.ajax({
      
      //console.log(Math.floor(Math.random()*100));
      for (let index = 0; index < 10; index++) {
-       
-        drinks.push(intialPull.drinks[Math.floor(Math.random()*intialPull.drinks.length)]);
+       var ranDrink = intialPull.drinks[Math.floor(Math.random()*intialPull.drinks.length)]
+       if (drinks.indexOf(ranDrink)===-1){
+          drinks.push(ranDrink);
+          
+       }
+       else{   
+             index--;
+       }
+        
         }
         displayButtons(drinks);
         console.log(drinks);
@@ -38,13 +46,14 @@ $(document).on('click', ".drink-btn",function(event){
     event.preventDefault()
     $(".test").empty()
     var testID = $(this).attr("drinkID")
+    var indexSpot = $(this).attr("index")
 
-    console.log(testID)
-    lookupDrink(testID)
+    //console.log(testID)
+    lookupDrink(testID, indexSpot)
     
 })
 
-function lookupDrink(idDrink){
+function lookupDrink(idDrink, indx){
 var id = idDrink
 
 var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="+id
@@ -55,6 +64,11 @@ $.ajax({
   }).then(function(ingredientPull) {
     var i = 1;
     var name = "strIngredient"+i;
+    var addPic = $("<div>");
+    var imgs1 = $("<img src="+ drinks[indx].strDrinkThumb+">")
+    var text1 = $("<div>").text(drinks[indx].strDrink)
+    addPic.append(text1,imgs1);
+    $(".test").append(addPic);
     
     while(ingredientPull.drinks[0][name] != null) {
             var list = $("<ul>")
@@ -63,13 +77,17 @@ $.ajax({
             name = "strIngredient"+i;
             $(".test").append(ingredients)
        }
+
+       var instructions = $("<div>").text(ingredientPull.drinks[0].strInstructions)
+       $(".test").append(instructions);
+      //console.log(drinks)
       
     var newBtn = $("<button>");
     newBtn.text("Go Back");
     newBtn.addClass("back-btn")
     $(".test").append(newBtn);
 
-       console.log(ingredientPull)
+       //console.log(ingredientPull)
     })
   }
 
