@@ -1,5 +1,4 @@
 
-
 lookupByIngredient("vodka");
 function lookupByIngredient(ingredient){
 var ing = ingredient;
