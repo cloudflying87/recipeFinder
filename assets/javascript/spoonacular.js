@@ -38,7 +38,7 @@ var food = []
   function displayChoices(food){
       for (let i = 0; i < food.length; i++) {
         var addRecipeOptions = $('<button>');
-        addRecipeOptions.addClass('foodOptions');
+        addRecipeOptions.addClass('foodOptions col-3 btn ');
         addRecipeOptions.attr('recipeID',food[i].id);
         
         var imgFood = $("<img src="+ food[i].image +">") ;

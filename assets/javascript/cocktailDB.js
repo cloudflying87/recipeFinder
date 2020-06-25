@@ -7,7 +7,7 @@ function displayButtons(drinks){
   for (let index = 0; index < 10; index++) {
     //console.log("this happened")
     var addDrinks = $("<button>")
-    addDrinks.addClass("drink-btn")
+    addDrinks.addClass("drink-btn col-3")
     addDrinks.attr("drinkID", drinks[index].idDrink);
     addDrinks.attr("index", index);
    // addDrinks.data('target', '#modelId')
@@ -40,11 +40,7 @@ $.ajax({
         
         }
         displayButtons(drinks);
-<<<<<<< HEAD
        // console.log(drinks);
-=======
-        //console.log(drinks);
->>>>>>> 771a44218fff3e6624a3afb785594df03463066d
   })
 }
 
