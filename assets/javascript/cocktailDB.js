@@ -38,7 +38,7 @@ $.ajax({
         
         }
         displayButtons(drinks);
-        console.log(drinks);
+       // console.log(drinks);
   })
 }
 
