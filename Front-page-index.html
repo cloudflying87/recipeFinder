@@ -10,42 +10,73 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
 <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="Front-style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header id="page_header" class="container-fluid  pt-3 pb-3 text-center">
-  <h1 class="text-white">Recipe Search by Ingredients</h1>
-</header>
+  <header id="page_header" class="container-fluid  pt-3 pb-3 text-center">
+    <h1 class="text-white">Recipe Search by Ingredients</h1>
+  </header> 
+    <!-- <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="About.html">About</a>
+                 </li>
+                 <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+                </li>
+                 <li class="nav-item">
+                 <a class="nav-link" href="contact.html">Contact</a>
+                 </li>
+             </ul>
+       </div> -->
+</nav>
+<!-- <header id="page_header" class="container-fluid  pt-3 pb-3 text-center">
+  <h1 class="text">Recipe Search by Ingredients</h1>
+</header> -->
+
+
+
+
+
 <div class="container-fluid" id="card-container">
   <div class="row"> 
-    
+
+        
     <!-- Your ingredients area Start --->
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body"> 
-          <!-- Your ingredients input Start --->
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Enter your ingredients" aria-label="ingredients" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-warning fas fa-utensils text-danger" type="button"></button>
-            </div>
-          </div>
-          <!-- Your ingredients input End ---> 
-          <br>
-          <!-- Your Beverages input Start --->
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Enter Your Beverages" aria-label="Beverages" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-warning fas fa-wine-glass-alt text-danger" type="button"></button>
-            </div>
-          </div>
-          <!-- Your Beverages input End ---> 
-          
-        </div>
-      </div>
-    </div>
-    <!-- Your ingredients End ---> 
+   
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body"> 
+              <!-- Your ingredients input Start --->
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter your ingredients" aria-label="ingredients" aria-describedby="basic-addon2" id="ingrInpt">
+                <div class="input-group-append">
+                  <button class="btn btn-warning fas fa-utensils text-danger" type="button" id="ingrBt"></button>
+                </div>
+              </div>
+              <!-- Your ingredients input End ---> 
+              <br>
+              <!-- Your Beverages input Start --->
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter Your Beverages" aria-label="Beverages" aria-describedby="basic-addon2" id="drinkInpt">
+                <div class="input-group-append">
+                  <button class="btn btn-warning fas fa-wine-glass-alt text-danger" type="button" id="drinkBt"></button>
+                </div>
+              </div>
+              <!-- Your Beverages input End ---> 
+              <p>Food ingredients</p>
+              <ul id="ingrList">
     
+              </ul>
+
+              <p>Drink ingredients</p>
+              <ul id="drinkList">
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      
     <!-- recipe area start --->
     
     <div class="col-sm-9">
@@ -57,43 +88,12 @@
             <div class="container">
               <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Receipe Suggestions For You!!</h1>
               <hr class="mt-2 mb-5">
-              <div class="row text-center text-lg-left">
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a></div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-danger">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a> </div>
+              <div class="row text-center text-lg-left recipe">
+                <div class="row text-center text-lg-left">
+                  <!-- <div class="col-lg-3 col-md-4 col-6">
+                    <p class="text-danger">Image Name</p>
+                    <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a>
+                  </div> -->
               </div>
             </div>
             <!-- recipe Content End --> 
@@ -102,43 +102,8 @@
             <div class="container">
               <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
               <hr class="mt-2 mb-5">
-              <div class="row text-center text-lg-left">
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"><img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                  <p class="text-success">Image Name</p>
-                  <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/1552/files/2016/03/Beverages-Juice.jpg" alt=""> </a> </div>
+              <div class="row text-center text-lg-left beverage">
+                
               </div>
             </div>
             <!-- recipe Content End --> 
@@ -147,7 +112,29 @@
       </div>
     </div>
     <!-- recipe  area End ---> 
+
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<script src="assets/javascript/cocktailDB.js"></script>
+<!-- <script src="assets/javascript/spoonacular.js"></script> -->
 </body>
 </html>
