@@ -7,7 +7,7 @@ function displayButtons(drinks){
   for (let index = 0; index < 10; index++) {
     //console.log("this happened")
     var addDrinks = $("<button>")
-    addDrinks.addClass("drink-btn col-3")
+    addDrinks.addClass("drink-btn button")
     addDrinks.attr("drinkID", drinks[index].idDrink);
     addDrinks.attr("index", index);
    // addDrinks.data('target', '#modelId')
