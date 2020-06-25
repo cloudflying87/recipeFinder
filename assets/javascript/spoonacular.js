@@ -7,18 +7,18 @@ window.onbeforeunload = function() {
 }
 
 var userIngr = ''
-var Ingr = 'cheese,+cucumber'
+var Ingr = 'bacon,+cheese'
 
 
-// for (let i = 0; i <= 1; i++) {
 //   userIngr = prompt()
 //     if(Ingr !== ''){
-//       Ingr += ',+' + userIngr
-//     }
-//     else{
-//       Ingr += userIngr
-//     }
-//   console.log(Ingr)
+  //       Ingr += ',+' + userIngr
+  //     }
+  //     else{
+    //       Ingr += userIngr
+    //     }
+    //   console.log(Ingr)
+                // for (let i = 0; i <= 1; i++) {
 // }
 
 var recipeID
