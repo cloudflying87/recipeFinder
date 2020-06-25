@@ -41,6 +41,10 @@ function displayButtons(drinks){
     newText.text(drinks[index].strDrink);
     newText.css({"text-align":"center","line-height":"0%"});
     
+    if (drinks[index].strDrink.length > 25){
+      newText.css("font-size","small")
+    }
+
     
     
     var newLink = $("<a>").addClass("d-block mb-4 h-100");
@@ -90,6 +94,7 @@ $.ajax({
        }
         
         }
+        $(".beverage").empty();
         displayButtons(drinks);
        // console.log(drinks);
   })
