@@ -94,6 +94,7 @@ $.ajax({
        }
         
         }
+        $(".beverage").empty();
         displayButtons(drinks);
        // console.log(drinks);
   })
