@@ -1,3 +1,25 @@
 img{
     height:150px
 }
+
+.button {
+    background-color: #bae9e5; 
+    border: none;
+    color: rgb(0, 0, 0);
+    /* padding: 15px 32px; */
+    margin: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 16px;
+    height: 215px;
+    width: 250px;
+  }
+
+  .button:hover {
+      background-color: #72ece2;
+      border-color: black;
+      border-width: 3px;
+      border-style: solid;
+  }
