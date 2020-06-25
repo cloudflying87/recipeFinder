@@ -24,3 +24,13 @@ img{
       border-style: solid;
   }
   
+  #page_header{
+    text-align: center;
+    background-color:#000000;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: white
+
+}
+#card-container{
+	padding-top: 10px;
+}
