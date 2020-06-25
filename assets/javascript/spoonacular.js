@@ -1,4 +1,7 @@
 // An easy way to input the user data into the ajax call. 
+var intolerances = ['Dairy','Egg','Gluten','Grain','Peanut','Seafood',
+                    'Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat']
+
 window.onbeforeunload = function() {
   return "Dude, are you sure you want to leave? Think of the kittens!";
 }
@@ -40,7 +43,6 @@ var food = []
         var addRecipeOptions = $('<button>');
         addRecipeOptions.addClass('foodOptions button');
         addRecipeOptions.attr('recipeID',food[i].id);
-        
         var imgFood = $("<img src="+ food[i].image +">") ;
         var text = $('<div>').text(food[i].title);
         addRecipeOptions.append(text,imgFood);
