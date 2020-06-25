@@ -30,6 +30,7 @@ var food = []
       for (let i = 0; i < initialPull.length; i++) {
         food.push(initialPull[i]) 
       }
+      
       displayChoices(food);
     }); 
   }
@@ -39,6 +40,7 @@ var food = []
         var addRecipeOptions = $('<button>');
         addRecipeOptions.addClass('foodOptions');
         addRecipeOptions.attr('recipeID',food[i].id);
+        
         var imgFood = $("<img src="+ food[i].image +">") ;
         var text = $('<div>').text(food[i].title);
         addRecipeOptions.append(text,imgFood);
@@ -46,14 +48,34 @@ var food = []
       }  
   }
   // calling the recipe url to get the instructions
-function callRecipeURL (){
+function callRecipeURL (recipeID){
   $.ajax({
     url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=2b49753a505a43fe8dbfb610bb43e250",
     method: "GET"
-  }).then(function(data) {
+  }).then(function(data) { 
+
+    //console.log(data.sourceUrl);
+
+    window.open(data.sourceUrl, '_blank')
+    
+
+
     
   }); 
 }
+
+$(document).on('click','.foodOptions', function(event){
+  event.preventDefault()
+  console.log("this happened")
+  var testID = $(this).attr('recipeID');
+
+  callRecipeURL(testID);
+
+
+
+
+
+})
 /* if we want to try extract the recipe from the site instead of just linking to the site.
   function extractRecipe(){
     $.ajax({
