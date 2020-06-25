@@ -1,15 +1,17 @@
 
-var Ingr = 'bacon,+cheese'
-
 $("#ingrBt").click(function(){
   console.log('button clicked')
   event.preventDefault()
   
   var item = $("#ingrInpt").val().trim()
-  
 
-  Ingr += item
-  console.log(Ingr)
+      if(Ingr !== ''){
+        Ingr += ',+' + item
+      }
+      else{
+        Ingr += item
+      }
+    console.log(Ingr)
   
 
 renderInputs(item)
@@ -18,10 +20,10 @@ renderInputs(item)
 
 function renderInputs(text){
 
-  // $("#ingre").val('')
+  $("#ingrInpt").val('')
 
   var a = $("<li>");
-  a.addClass(ingrItem)
+  a.addClass("ingrItem")
   a.text(text)
     $("#ingrList").append(a);
   
@@ -91,17 +93,16 @@ $(document).on('click','.foodOptions', function(event){
 
 
 
-// })
-// /* if we want to try extract the recipe from the site instead of just linking to the site.
-//   function extractRecipe(){
-//     $.ajax({
-//       url: "https://api.spoonacular.com/recipes/extract?" + data.sourceUrl+"&apiKey=2b49753a505a43fe8dbfb610bb43e250",
-//       method: "GET"
-//     }).then(function(extract) {
-//       var extract = $('<div>').text(extract)
-//       console.log(extract)
-//     }); 
-//   }
-// */
-// websiteCall()
-
+})
+/* if we want to try extract the recipe from the site instead of just linking to the site.
+  function extractRecipe(){
+    $.ajax({
+      url: "https://api.spoonacular.com/recipes/extract?" + data.sourceUrl+"&apiKey=2b49753a505a43fe8dbfb610bb43e250",
+      method: "GET"
+    }).then(function(extract) {
+      var extract = $('<div>').text(extract)
+      console.log(extract)
+    }); 
+  }
+*/
+websiteCall()
