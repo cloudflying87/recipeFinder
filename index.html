@@ -10,6 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
 <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -32,10 +33,6 @@
 <!-- <header id="page_header" class="container-fluid  pt-3 pb-3 text-center">
   <h1 class="text">Recipe Search by Ingredients</h1>
 </header> -->
-
-
-
-
 
 <div class="container-fluid" id="card-container">
   <div class="row"> 
@@ -66,15 +63,12 @@
               <!-- Your Beverages input End ---> 
               <p>Food ingredients</p>
               <ul id="ingrList">
-    
               </ul>
 
               <p>Drink ingredients</p>
               <ul>
                 <li class ="ingrItem" id="drinkList">
-                  
                 </li>
-
               </ul>
             </div>
           </div>
@@ -89,11 +83,14 @@
             
             <!-- recipe Content start -->
             <div class="container">
-              <div id="list1" class="dropdown-check-list" tabindex="100">
-                <span class="anchor">Select Diet</span>
-                <ul class="items">
-                    <li><input type="checkbox" />Apple </li>
-                </ul>
+              
+              <div id="intoleranceDropdown" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Ingredients to Exclude</span>
+                <ul class="items"></ul>
+              </div>
+              <div id="dietDropdown" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Diet Options</span>
+                <ul class="items"></ul>
               </div>
               <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Receipe Suggestions For You!!</h1>
               <hr class="mt-2 mb-5">
@@ -145,6 +142,6 @@
 </div>
 <script src="assets/javascript/cocktailDB.js"></script>
 <script src="assets/javascript/spoonacular.js"></script>
-<!-- <script src="assets/javascript/foodoptions.js"></script> -->
+<script src="assets/javascript/foodoptions.js"></script>
 </body>
 </html>
