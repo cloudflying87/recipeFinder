@@ -4,17 +4,40 @@ var drinks = [];
 
 function displayButtons(drinks){
   
-  for (let index = 0; index < 10; index++) {
+  for (let index = 0; index < 12; index++) {
     //console.log("this happened")
+
+    var newDiv = $("<button>").addClass("col-lg-3 col-md-4 col-6 drink-btn");
+    newDiv.attr("drinkID", drinks[index].idDrink);
+    newDiv.attr("index", index);
+    newDiv.css({"padding": "0", "border": "none","background": "none","margin-bottom":"10px" });
+    
+    var newText = $("<p>").addClass("text-danger");
+    newText.text(drinks[index].strDrink);
+    newText.css({"text-align":"center","line-height":"0%"});
+    
+    var newLink = $("<a>").addClass("d-block mb-4 h-100");
+    
+    var newImg = $("<img src="+ drinks[index].strDrinkThumb+">").addClass("img-fluid img-thumbnail");
+    //newImg.css({"margin-top":"0px","padding-top":"0px","border-top":"0px"})
+    newLink.append(newImg);
+    newDiv.append(newText,newLink);
+    $(".beverage").append(newDiv);
+    
+
+
+
+    /*
     var addDrinks = $("<button>")
-    addDrinks.addClass("drink-btn button")
+    addDrinks.addClass("drink-btn button col-lg-3 col-md-4 col-6")
     addDrinks.attr("drinkID", drinks[index].idDrink);
     addDrinks.attr("index", index);
    // addDrinks.data('target', '#modelId')
     var imgs = $("<img src="+ drinks[index].strDrinkThumb+">")
-    var text = $("<div>").text(drinks[index].strDrink)
+    var text = $("<p>").text(drinks[index].strDrink)
+    text.addClass("text-danger");
     addDrinks.append(text,imgs);
-    $(".test").append(addDrinks);
+    $(".beverage").append(addDrinks);*/
  }
 }
 
@@ -28,7 +51,7 @@ $.ajax({
   
      
      //console.log(Math.floor(Math.random()*100));
-     for (let index = 0; index < 10; index++) {
+     for (let index = 0; index < 12; index++) {
        var ranDrink = intialPull.drinks[Math.floor(Math.random()*intialPull.drinks.length)]
        if (drinks.indexOf(ranDrink)===-1){
           drinks.push(ranDrink);
