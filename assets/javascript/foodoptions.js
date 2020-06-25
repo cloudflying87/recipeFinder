@@ -39,4 +39,15 @@ var intolerances = ['dairy','egg','gluten','grain','peanut','seafood','sesame','
 var dietrestrictions = ['glutenfree','ketogenic','vegetarian','lacto-vegetarian','ovo-vegetarian','vegan','pescetarian','paleo','primal','whole30']
 
 
+var checkList = document.getElementById('list1');
+            checkList.$('.anchor')[0].onclick = function (evt) {
+                if (checkList.classList.contains('visible'))
+                    checkList.classList.remove('visible');
+                else
+                    checkList.classList.add('visible');
+            }
+    
+            checkList.onblur = function(evt) {
+                checkList.classList.remove('visible');
+            }
 

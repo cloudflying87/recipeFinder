@@ -1,26 +1,24 @@
 var drink = ''
 
 $("#drinkBt").click(function(){
-  console.log('button clicked')
   event.preventDefault()
+  console.log("drink button")
   
   var item = $("#drinkInpt").val().trim()
   drink = item
   
-renderInputs(item)
+renderDrinks(item)
 
 });
 
-function renderInputs(text){
+function renderDrinks(text){
 
   $("#drinkInpt").val('')
-
-  var a = $("<li>");
-  a.addClass("ingrItem")
-  a.text(text)
-    $("#drinkList").append(a);
+  var b = $("#drinkList");
+  $("#drinkList").text(text)
+  console.log(text)
   lookupByIngredient(text);
-    console.log(text)
+    
 };
 
 //lookupByIngredient(drink);
@@ -43,6 +41,7 @@ function displayButtons(drinks){
     
     if (drinks[index].strDrink.length > 25){
       newText.css("font-size","small")
+      newText.css("line-height","100%")
     }
 
     
@@ -81,10 +80,11 @@ $.ajax({
     method: "GET"
   }).then(function(intialPull) {
   
-     
+    drinks = [];
      //console.log(Math.floor(Math.random()*100));
      for (let index = 0; index < 12; index++) {
        var ranDrink = intialPull.drinks[Math.floor(Math.random()*intialPull.drinks.length)]
+       
        if (drinks.indexOf(ranDrink)===-1){
           drinks.push(ranDrink);
           
