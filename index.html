@@ -29,7 +29,6 @@
                  </li>
              </ul>
        </div> -->
-</nav>
 <!-- <header id="page_header" class="container-fluid  pt-3 pb-3 text-center">
   <h1 class="text">Recipe Search by Ingredients</h1>
 </header> -->
@@ -47,6 +46,7 @@
         <div class="col-sm-3">
           <div class="card">
             <div class="card-body"> 
+              
               <!-- Your ingredients input Start --->
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter your ingredients" aria-label="ingredients" aria-describedby="basic-addon2" id="ingrInpt">
@@ -70,7 +70,10 @@
               </ul>
 
               <p>Drink ingredients</p>
-              <ul id="drinkList">
+              <ul>
+                <li class ="ingrItem" id="drinkList">
+                  
+                </li>
 
               </ul>
             </div>
@@ -86,26 +89,32 @@
             
             <!-- recipe Content start -->
             <div class="container">
+              <div id="list1" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Select Diet</span>
+                <ul class="items">
+                    <li><input type="checkbox" />Apple </li>
+                </ul>
+              </div>
               <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Receipe Suggestions For You!!</h1>
               <hr class="mt-2 mb-5">
               <div class="row text-center text-lg-left recipe">
-                <div class="row text-center text-lg-left">
+                <!-- <div class="row text-center text-lg-left"> -->
                   <!-- <div class="col-lg-3 col-md-4 col-6">
                     <p class="text-danger">Image Name</p>
                     <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a>
                   </div> -->
-              </div>
+              <!-- </div> -->
             </div>
             <!-- recipe Content End --> 
             
             <!-- Beverages Content Start -->
-            <div class="container">
+            <!-- <div class="container"> -->
               <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
               <hr class="mt-2 mb-5">
               <div class="row text-center text-lg-left beverage">
                 
               </div>
-            </div>
+            <!-- </div> -->
             <!-- recipe Content End --> 
           </div>
         </div>
@@ -135,6 +144,7 @@
   </div>
 </div>
 <script src="assets/javascript/cocktailDB.js"></script>
-<!-- <script src="assets/javascript/spoonacular.js"></script> -->
+<script src="assets/javascript/spoonacular.js"></script>
+<!-- <script src="assets/javascript/foodoptions.js"></script> -->
 </body>
 </html>
