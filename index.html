@@ -12,8 +12,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
-  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dropdown.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -28,7 +29,42 @@
         <div class="card">
           <div class="card-body">
 
-            <!-- Your ingredients input Start --->
+<!-- Ingredient category list --->
+            <div id="accordion"> 
+              <!-- Food ingredients area start --->
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h3 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Food ingredients</button>
+                  </h3>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body options">
+                   
+                    
+                  </div>
+                </div>
+              </div>
+              <!-- Food ingredients area End ---> 
+              
+              <!-- Drink ingredients area start --->
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h3 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> Drink ingredients </button>
+                  </h3>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body drinkOptions">
+                    
+                  </div>
+                </div>
+              </div>
+              <!-- Drink ingredients area End --->     
+              
+            </div>
+<!-- Ingredient Category List end -->
+<!-- Input box start -->
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Enter your ingredients" aria-label="ingredients"
                 aria-describedby="basic-addon2" id="ingrInpt">
@@ -47,9 +83,11 @@
               </div>
             </div>
             <!-- Your Beverages input End --->
+<!-- Input box end -->
             <p>Food ingredients</p>
+            
             <ul id="ingrList">
-
+              
             </ul>
 
             <p>Drink ingredients</p>
@@ -64,21 +102,20 @@
       </div>
 
       <!-- recipe area start --->
-
+      
       <div class="col-sm-9">
-        <div class="card">
+        <!-- <div class='dropdown' id='intoleranceDropdown'>
+          <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
+          <div class='menu pointerCursor hide intolerance'>
+          </div>
+        </div> -->
+        <!-- <div class='dropdown' id='intoleranceDropdown'>
+          <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
+          <div class='menu pointerCursor hide diet'>
+          </div>
+        </div> -->
+        <div class="card ">
           <div class="card-body">
-            <button id="myButton">My button</button>
-            <div class='dropdown' id='intoleranceDropdown'>
-              <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
-              <div class='menu pointerCursor hide intolerance'>
-              </div>
-            </div>
-            <div class='dropdown' id='dietDropdown'>
-              <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
-              <div class='menu pointerCursor hide diet'>
-              </div>
-            </div>
               <!-- recipe Content start -->
               <div class="container">
                 

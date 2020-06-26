@@ -2,12 +2,22 @@
 .hide {
     max-height: 0 !important;
 }
-
+.positionDropDown{
+	position: relative;
+	display:inline;
+	top:0px;
+}
 .dropdown{
 	border: 0.1em solid black;
 	width: 35%;
   display: inline-block;
-  z-index: 5;
+  background-color: white;
+  
+  position: absolute;
+  top:-95px; 
+  left:-48px;
+  margin: 100px;
+  z-index: 1;
 }
 
 .dropdown .title{
@@ -19,7 +29,7 @@
 	float: right;
 	margin-right: .7em;
   transition: transform .3s;
-  z-index: 5;
+  
 }
 
 .dropdown .menu{

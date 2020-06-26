@@ -3,6 +3,28 @@
 
 https://api.spoonacular.com/recipes/search?query=cheese&number=2&diet=vegetarian&exlcudeIngredients=eggs&intolerances=gluten&apiKey=0dcf6018121d4ae3ab90ebb53ead0081 
 */
+
+var foodCategory = ['Bread', 'Rice', 'Cheese', 'Egg', 'Fish','Chicken', 'Prawn', 'Sugar', 'Potato', 'Mango'] 
+
+var drinkCategory = ['gin','vodka','rum']
+
+categoryCall(foodCategory,".options");
+categoryCall(drinkCategory,".drinkOptions");
+
+function categoryCall(category,appendPlace) {
+    
+    for (let index= 0; index < category.length; index++) {
+        var NewDiv = $('<div>').addClass("form-check form-check-inline")
+        var NewInput = $('<input>').addClass("form-check-input")
+        NewInput.attr('id', category[index])
+        NewInput.attr('type','checkbox')
+        
+        var NewLabel = $('<label>').addClass('form-check-label').text(category[index])
+        NewDiv.append(NewInput,NewLabel)
+        $(appendPlace).append(NewDiv)   
+    }
+}
+
 var menuClicked;
 
 var displayIntolerances = ['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat']
@@ -13,40 +35,25 @@ var displayDietRestrictions = ['Gluten Free','Ketogenic','Vegetarian','Lacto-Veg
 
 var dietrestrictions = ['glutenfree','ketogenic','vegetarian','lacto-vegetarian','ovo-vegetarian','vegan','pescetarian','paleo','primal','whole30']
 
-addingIntolerances();
-addingDiet();
-function addingIntolerances(){
-    for (let i = 0; i < intolerances.length; i++) {
-    var list = $("<option>");
-    list.addClass('option')
-    list.val(intolerances[i]).text(displayIntolerances[i]);
-    $('.intolerance').append(list) 
+addingOptions(intolerances,displayIntolerances,'.intolerances');
+addingOptions(dietrestrictions,displayDietRestrictions,'.diet');
+
+
+function addingOptions(selectOptions,displayOptions,placement){
+    for (let i = 0; i < selectOptions.length; i++) {
+    var list = $("<input>");
+    list.attr('type','checkbox')
+    list.val(selectOptions[i]).text(displayOptions[i]);
+    $(placement).append(list) 
 }};
 
-function addingDiet(){
-    for (let i = 0; i < intolerances.length; i++) {
-    var list = $("<option>");
-    list.addClass('option')
-    list.val(intolerances[i]).text(displayIntolerances[i]);
-    $('.intolerance').append(list) 
-}};
-addingTippy()
-var messages = []
-function addingTippy(){
-    for (let i = 0; i < intolerances.length; i++) {
-    var list = $("<option>");
-    list.addClass('option')
-    list.val(intolerances[i]).text(displayIntolerances[i]);
-    // $('#myButton').content.append(list) 
-}};
-
-tippy('#myButton', {
-    allowHTML: true,
-    animateFill: true,
-    animation: 'scale',
-    animation: 'shift-away',
-    content: messages,
-})
+// tippy('#myButton', {
+//     allowHTML: true,
+//     animateFill: true,
+//     animation: 'scale',
+//     animation: 'shift-away',
+//     content: messages,
+// })
 /*
 function toggleClass(elem,className){
 if (elem.className.indexOf(className) !== -1){
@@ -176,7 +183,7 @@ function toggleClass(elem,className){
   function handleTitleChange(e){
     const result = document.getElementById('result');
   
-    result.innerHTML = 'The result is: ' + e.target.textContent;
+    console.log(e.target.textContent);
   }
   
   //get elements
