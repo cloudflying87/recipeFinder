@@ -1,6 +1,47 @@
 /* Gluten Free
 Eliminating gluten means avoiding wheat, barley, rye, and other gluten-containing grains and foods made from them (or that may have been cross contaminated).
 
+
+/*https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=2b49753a505a43fe8dbfb610bb43e250
+
+https://api.spoonacular.com/recipes/search?query=cheese&number=2&diet=vegetarian&exlcudeIngredients=eggs&intolerances=gluten&apiKey=0dcf6018121d4ae3ab90ebb53ead0081 
+*/
+
+var foodCategory = ['Bread', 'Rice', 'Cheese', 'Egg', 'Fish','Chicken', 'Prawn', 'Sugar', 'Potato', 'Mango'] 
+
+var drinkCategory = ['gin','vodka','rum']
+
+categoryCall(foodCategory,".foodOptions");
+categoryCall(drinkCategory,".drinkOptions");
+
+function categoryCall(category,appendPlace) {
+    
+    for (let index= 0; index < category.length; index++) {
+        var NewDiv = $('<div>').addClass("form-check form-check-inline")
+        var NewInput = $('<input>').addClass("form-check-input")
+        NewInput.attr('id', category[index])
+        NewInput.attr('type','checkbox')
+        
+        var NewLabel = $('<label>').addClass('form-check-label').text(category[index])
+        NewDiv.append(NewInput,NewLabel)
+        $(appendPlace).append(NewDiv)   
+    }
+}
+
+var menuClicked;
+
+var displayIntolerances = ['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat']
+
+var intolerances = ['dairy','egg','gluten','grain','peanut','seafood','sesame','shellfish','soy','sulfite','tree','nut','wheat']
+
+var displayDietRestrictions = ['Gluten Free','Ketogenic','Vegetarian','Lacto-Vegetarian','Ovo-Vegetarian','Vegan','Pescetarian','Paleo','Primal','Whole30']
+
+var dietrestrictions = ['glutenfree','ketogenic','vegetarian','lacto-vegetarian','ovo-vegetarian','vegan','pescetarian','paleo','primal','whole30']
+
+addingOptions(intolerances,displayIntolerances,'.intolerances');
+addingOptions(dietrestrictions,displayDietRestrictions,'.diet');
+
+
 Ketogenic
 The keto diet is based more on the ratio of fat, protein, and carbs in the diet rather than specific ingredients. Generally speaking, high fat, protein-rich foods are acceptable and high carbohydrate foods are not.
 

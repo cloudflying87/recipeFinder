@@ -17,7 +17,9 @@ img{
     width: 250px;
   }*/
   
-
+#listy{
+  display:none;
+}
   .button:hover {
       background-color: #72ece2;
       border-color: black;

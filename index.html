@@ -10,6 +10,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+  <link rel="stylesheet" href="assets/css/dropdown.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -24,15 +26,39 @@
 
 
       <!-- Your ingredients area Start --->
-
       <div class="col-sm-3" id="sideNav">
         <div class="w3-bar w3-black">
           <button class="w3-bar-item w3-button" onclick="openMenu('search')">Search</button>
           <button class="w3-bar-item w3-button" onclick="openMenu('listy')">Categories</button>
-          
         </div>
 
         <div class = "options1" id = "listy">
+          <!-- Ingredient category list --->
+            <div id="accordion"> 
+              
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h3 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Food ingredients</button>
+                  </h3>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body foodOptions"></div>
+                </div>
+              </div> 
+              
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h3 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> Drink ingredients </button>
+                  </h3>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body drinkOptions"></div>
+                </div>
+              </div>     
+            </div> 
+<!-- Ingredient Category List end -->
 
         </div>
         <div class="card options1" id="search">
@@ -78,6 +104,13 @@
       
 
       <div class="col-sm-9">
+
+        <!-- <div class='dropdown' id='intoleranceDropdown'>
+          <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
+          <div class='menu pointerCursor hide intolerance'>
+          </div>
+        </div> -->
+
         <div class="card">
           <div class="card-body">
             <div>
@@ -88,12 +121,7 @@
                   <div class="w3-bar w3-black">
                     <button class="w3-bar-item w3-button" onclick="openCity('London')">Food</button>
                     <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Drink</button>
-                    
                   </div>
-                  <span class="anchor">Select Diet</span>
-                  <ul class="items">
-                    <li><input type="checkbox" />Apple </li>
-                  </ul>
                 </div>
                 <div class ="options" id ="London">
                 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Receipe Suggestions For You!!</h1>
