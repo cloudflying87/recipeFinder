@@ -118,18 +118,19 @@ $.ajax({
         }
         $(".beverage").empty();
         displayButtons(drinks);
+       // console.log(drinks);
   })
 }
 
 $(document).on('click', ".drink-btn",function(event){
     event.preventDefault()
     $(".modal-body").empty()
-    
+    //$(".test").empty()
     var testID = $(this).attr("drinkID")
     var indexSpot = $(this).attr("index")
     $("#modelId").modal("show");
 
-    
+    //console.log(testID)
     lookupDrink(testID, indexSpot)
     
 })
@@ -145,10 +146,11 @@ $.ajax({
   }).then(function(ingredientPull) {
     var i = 1;
     var name = "strIngredient"+i;
-    
+    //var addPic = $("<div>");
     var imgs1 = $("<img src="+ drinks[indx].strDrinkThumb+">")
     var text1 = $("<div>").text(drinks[indx].strDrink)
-   
+    //addPic.append(text1,imgs1);
+    //console.log(drinks[indx].strDrink)
    $(".modal-title").text(drinks[indx].strDrink)
    $(".modal-body").append(imgs1);
     
@@ -162,11 +164,18 @@ $.ajax({
 
        var instructions = $("<div>").text(ingredientPull.drinks[0].strInstructions)
        $(".modal-body").append(instructions);
-    
+      //console.log(drinks)
+    /*  
+    var newBtn = $("<button>");
+    newBtn.text("Go Back");
+    newBtn.addClass("back-btn")
+    $(".test").append(newBtn);
+*/
+       //console.log(ingredientPull)
     })
   }
 
   $(document).on('click', ".back-btn",function(event){
-    
+    //$(".test").empty();
     displayButtons(drinks);
 })
