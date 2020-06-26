@@ -205,3 +205,10 @@ img{
   .dropdown-check-list.visible .items {
     display: block;
   }
+
+  #sideNav{
+    position: sticky;
+    z-index: 1;
+    top: 113.2px;
+   
+  }
