@@ -40,7 +40,7 @@ var dietrestrictions = ['glutenfree','ketogenic','vegetarian','lacto-vegetarian'
 
 addingOptions(intolerances,displayIntolerances,'.intolerances');
 addingOptions(dietrestrictions,displayDietRestrictions,'.diet');
-
+/*
 
 Ketogenic
 The keto diet is based more on the ratio of fat, protein, and carbs in the diet rather than specific ingredients. Generally speaking, high fat, protein-rich foods are acceptable and high carbohydrate foods are not.
