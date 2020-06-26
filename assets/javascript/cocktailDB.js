@@ -7,19 +7,41 @@ $("#drinkBt").click(function(){
   var item = $("#drinkInpt").val().trim()
   drink = item
   
-renderDrinks(item)
+ renderDrinks(item)
 
+});
+
+$("#ingrBt").click(function(){
+  console.log('Input into drink')
+  event.preventDefault()
+  var item = $("#ingrInpt").val().trim()
+    console.log(Ingr)
+    lookupByIngredient(item)
 });
 
 function renderDrinks(text){
 
   $("#drinkInpt").val('')
   var b = $("#drinkList");
-  $("#drinkList").text(text)
-  console.log(text)
+  var c = $("<button>");
+  c.addClass("btn btn-warning fas fa-trash text-danger delete-btn");
+  c.css({"background":"none","border":"none"});
+  
+
+  $("#drinkList").text(text);
+  $("#drinkList").append(c);
+  console.log(text);
   lookupByIngredient(text);
     
 };
+
+$( "#drinkList" ).click(function() {
+  console.log("delete wass clicked")
+  $(".delete-btn").remove();
+  $("#drinkList").text("");
+  $(".beverage").empty();
+
+});
 
 //lookupByIngredient(drink);
 var drinks = [];

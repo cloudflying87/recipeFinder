@@ -59,6 +59,10 @@ img{
   #page-content-wrapper {
     width: 100%;
   }
+
+  #Paris{
+    display:none;
+  }
   
   .sidebar-nav {
     position: absolute;
