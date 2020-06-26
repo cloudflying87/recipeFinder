@@ -7,8 +7,16 @@ $("#drinkBt").click(function(){
   var item = $("#drinkInpt").val().trim()
   drink = item
   
-renderDrinks(item)
+ renderDrinks(item)
 
+});
+
+$("#ingrBt").click(function(){
+  console.log('Input into drink')
+  event.preventDefault()
+  var item = $("#ingrInpt").val().trim()
+    console.log(Ingr)
+    lookupByIngredient(item)
 });
 
 function renderDrinks(text){
