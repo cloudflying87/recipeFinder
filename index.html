@@ -13,7 +13,7 @@
   <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
   <link rel="stylesheet" href="assets/css/dropdown.css">
-  <link rel="stylesheet" href="assets/css/style.css"
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
@@ -27,12 +27,9 @@
     <div class="row" style="align-items: flex-start">
       <!-- Your ingredients area Start --->
       <div class="col-sm-3" id="sideNav">
-
-        <div class="card">
         <div class="w3-bar w3-black">
           <button class="w3-bar-item w3-button" onclick="openMenu('search')">Search</button>
           <button class="w3-bar-item w3-button" onclick="openMenu('listy')">Categories</button>
-          
         </div>
 
         <div class = "options1" id = "listy">
@@ -46,7 +43,7 @@
                   </h3>
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body options"></div>
+                  <div class="card-body foodOptions"></div>
                 </div>
               </div> 
               
@@ -102,26 +99,15 @@
           <div class='menu pointerCursor hide intolerance'>
           </div>
         </div> -->
-        <!-- <div class='dropdown' id='intoleranceDropdown'>
-          <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
-          <div class='menu pointerCursor hide diet'>
-          </div>
-        </div> -->
-        <div class="card ">
+        <div class="card">
           <div class="card-body">
               <!-- recipe Content start -->
               <div class="container">
-
                 <div id="list1" class="dropdown-check-list" tabindex="100">
                   <div class="w3-bar w3-black">
                     <button class="w3-bar-item w3-button" onclick="openCity('London')">Food</button>
                     <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Drink</button>
-                    
                   </div>
-                  <span class="anchor">Select Diet</span>
-                  <ul class="items">
-                    <li><input type="checkbox" />Apple </li>
-                  </ul>
                 </div>
                 <div class ="options" id ="London">
 

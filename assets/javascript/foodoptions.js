@@ -8,7 +8,7 @@ var foodCategory = ['Bread', 'Rice', 'Cheese', 'Egg', 'Fish','Chicken', 'Prawn',
 
 var drinkCategory = ['gin','vodka','rum']
 
-categoryCall(foodCategory,".options");
+categoryCall(foodCategory,".foodOptions");
 categoryCall(drinkCategory,".drinkOptions");
 
 function categoryCall(category,appendPlace) {
