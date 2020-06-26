@@ -23,11 +23,25 @@ function renderDrinks(text){
 
   $("#drinkInpt").val('')
   var b = $("#drinkList");
-  $("#drinkList").text(text)
-  console.log(text)
+  var c = $("<button>");
+  c.addClass("btn btn-warning fas fa-trash text-danger delete-btn");
+  c.css({"background":"none","border":"none"});
+  
+
+  $("#drinkList").text(text);
+  $("#drinkList").append(c);
+  console.log(text);
   lookupByIngredient(text);
     
 };
+
+$( "#drinkList" ).click(function() {
+  console.log("delete wass clicked")
+  $(".delete-btn").remove();
+  $("#drinkList").text("");
+  $(".beverage").empty();
+
+});
 
 //lookupByIngredient(drink);
 var drinks = [];
