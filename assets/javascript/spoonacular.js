@@ -120,7 +120,7 @@ function websiteCall(url){
   function displayChoices(foods){
      
     for (let index = 0; index < 12; index++) {
-      console.log("this happened")
+      
   
       var newDiv = $("<button>").addClass("foodOptions button col-lg-3 col-md-4 col-6");
       newDiv.attr("recipeID", foods[index].id);
@@ -177,9 +177,7 @@ function callRecipeURL (recipeID){
 
 $(document).on('click','.foodOptions', function(event){
   event.preventDefault()
-  console.log("this happened")
   var testID = $(this).attr('recipeID');
-
   callRecipeURL(testID);
 })
 
