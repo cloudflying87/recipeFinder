@@ -176,7 +176,7 @@ function toggleClass(elem,className){
   function handleTitleChange(e){
     const result = document.getElementById('result');
   
-    result.innerHTML = 'The result is: ' + e.target.textContent;
+    console.log(e.target.textContent);
   }
   
   //get elements
