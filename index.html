@@ -11,6 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -25,8 +26,16 @@
       <!-- Your ingredients area Start --->
 
       <div class="col-sm-3" id="sideNav">
+        <div class="w3-bar w3-black">
+          <button class="w3-bar-item w3-button" onclick="openMenu('search')">Search</button>
+          <button class="w3-bar-item w3-button" onclick="openMenu('listy')">Categories</button>
+          
+        </div>
 
-        <div class="card">
+        <div class = "options1" id = "listy">
+
+        </div>
+        <div class="card options1" id="search">
           <div class="card-body">
 
             <!-- Your ingredients input Start --->
@@ -64,7 +73,9 @@
         </div>
       </div>
 
-      <!-- recipe area start --->
+      <!-- recipe area start ---> 
+
+      
 
       <div class="col-sm-9">
         <div class="card">
@@ -74,11 +85,17 @@
               <!-- recipe Content start -->
               <div class="container">
                 <div id="list1" class="dropdown-check-list" tabindex="100">
+                  <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button" onclick="openCity('London')">Food</button>
+                    <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Drink</button>
+                    
+                  </div>
                   <span class="anchor">Select Diet</span>
                   <ul class="items">
                     <li><input type="checkbox" />Apple </li>
                   </ul>
                 </div>
+                <div class ="options" id ="London">
                 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Receipe Suggestions For You!!</h1>
                 <hr class="mt-2 mb-5">
                 <div class="row text-center text-lg-left recipe">
@@ -89,13 +106,16 @@
                   </div> -->
                   <!-- </div> -->
                 </div>
+              </div>
                 <!-- recipe Content End -->
 
                 <!-- Beverages Content Start -->
                 <!-- <div class="container"> -->
+                  <div class = "options" id="Paris">
                 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
                 <hr class="mt-2 mb-5">
                 <div class="row text-center text-lg-left beverage">
+                </div>
 
                 </div>
                 <!-- </div> -->
