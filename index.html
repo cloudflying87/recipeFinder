@@ -5,11 +5,13 @@
   <title>Recipe Search</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -20,12 +22,8 @@
 
   <div class="container-fluid mt-3" id="card-container">
     <div class="row" style="align-items: flex-start">
-
-
       <!-- Your ingredients area Start --->
-
       <div class="col-sm-3" id="sideNav">
-
         <div class="card">
           <div class="card-body">
 
@@ -69,16 +67,20 @@
       <div class="col-sm-9">
         <div class="card">
           <div class="card-body">
-            <div>
-
+            <button id="myButton">My button</button>
+            <div class='dropdown' id='intoleranceDropdown'>
+              <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
+              <div class='menu pointerCursor hide intolerance'>
+              </div>
+            </div>
+            <div class='dropdown' id='dietDropdown'>
+              <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
+              <div class='menu pointerCursor hide diet'>
+              </div>
+            </div>
               <!-- recipe Content start -->
               <div class="container">
-                <div id="list1" class="dropdown-check-list" tabindex="100">
-                  <span class="anchor">Select Diet</span>
-                  <ul class="items">
-                    <li><input type="checkbox" />Apple </li>
-                  </ul>
-                </div>
+                
                 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Receipe Suggestions For You!!</h1>
                 <hr class="mt-2 mb-5">
                 <div class="row text-center text-lg-left recipe">
@@ -92,15 +94,11 @@
                 <!-- recipe Content End -->
 
                 <!-- Beverages Content Start -->
-                <!-- <div class="container"> -->
                 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
                 <hr class="mt-2 mb-5">
                 <div class="row text-center text-lg-left beverage">
-
                 </div>
-                <!-- </div> -->
                 <!-- recipe Content End -->
-              </div>
             </div>
           </div>
         </div>
@@ -128,9 +126,11 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="assets/javascript/cocktailDB.js"></script>
     <script src="assets/javascript/spoonacular.js"></script>
-    <!-- <script src="assets/javascript/foodoptions.js"></script> -->
+    <script src="assets/javascript/foodoptions.js"></script>
 </body>
 
 </html>
