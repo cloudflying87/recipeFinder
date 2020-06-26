@@ -130,6 +130,8 @@ dropdownOptions.forEach(option => option.addEventListener('click',handleOptionSe
 document.querySelector('.dropdown .title').addEventListener('change',handleTitleChange);
 
 */
+
+/*
 function toggleClass(elem,className){
     if (elem.className.indexOf(className) !== -1){
       elem.className = elem.className.replace(className,'');
@@ -197,4 +199,4 @@ function toggleClass(elem,className){
   
   document.querySelector('.dropdown .title').addEventListener('change',handleTitleChange);
 
-  
+*/
