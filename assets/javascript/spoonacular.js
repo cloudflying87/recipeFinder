@@ -88,6 +88,7 @@ $(document).on('click','.delete', function(event){
   }
   
  // console.log(Ingr);
+ $(".recipe").empty();
   websiteCall(Ingr);
 
   
@@ -108,7 +109,7 @@ function websiteCall(url){
       method: "GET"
     }).then(function(initialPull){
       food = [];
-      console.log(food);
+      console.log("https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + url + "&apiKey=2b49753a505a43fe8dbfb610bb43e250");
       for (let i = 0; i < initialPull.length; i++) {
         food.push(initialPull[i]) 
       }
@@ -119,7 +120,7 @@ function websiteCall(url){
   function displayChoices(foods){
      
     for (let index = 0; index < 12; index++) {
-      //console.log("this happened")
+      console.log("this happened")
   
       var newDiv = $("<button>").addClass("foodOptions button col-lg-3 col-md-4 col-6");
       newDiv.attr("recipeID", foods[index].id);
