@@ -93,10 +93,17 @@ function creatingURL (){
   if (Ingr !==''){
     spoonacularURL += Ingr
   } 
-
-// "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingr + "&diet=" + dietSelect + "&exlcudeIngredients="+ excludeSelect +"&intolerances="+ intoleranceSelect 
+  if (dietSelect !==''){
+    spoonacularURL += "&diet=" + dietSelect
+  }
+  if (intoleranceSelect !== ''){
+    spoonacularURL += "&intolerances="+ intoleranceSelect
+  }
+  if (excludeSelect !== ''){
+    spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
+  }
   spoonacularURL += "&apiKey=2b49753a505a43fe8dbfb610bb43e250"
-  console.log(spoonacularURL)
+  
   websiteCall()
 }
 
