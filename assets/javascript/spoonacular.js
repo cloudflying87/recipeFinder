@@ -25,7 +25,6 @@ function openCity(cityName) {
   var x = document.getElementsByClassName("options");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
-    
   }
   
   if (cityName == 'London'){
@@ -63,7 +62,7 @@ function renderFood(text){
   a.append(c);
   $("#ingrList").append(a);
   
-  websiteCall(Ingr);
+  creatingURL();
 };
 
 $(document).on('click','.delete', function(event){
@@ -85,19 +84,26 @@ $(document).on('click','.delete', function(event){
     Ingr = Ingr.replace(testy, "");
   }
  $(".recipe").empty();
-  websiteCall(Ingr)
+  creatingURL()
 });
 var spoonacularURL 
 function creatingURL (){
-  
-"https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingr + "&diet=" + dietSelect + "&exlcudeIngredients="+ excludeSelect +"&intolerances="+ intoleranceSelect +"&apiKey=2b49753a505a43fe8dbfb610bb43e250"
+  spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
+
+  if (Ingr !==''){
+    spoonacularURL += Ingr
+  } 
+
+// "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingr + "&diet=" + dietSelect + "&exlcudeIngredients="+ excludeSelect +"&intolerances="+ intoleranceSelect 
+  spoonacularURL += "&apiKey=2b49753a505a43fe8dbfb610bb43e250"
+  console.log(spoonacularURL)
+  websiteCall()
 }
 
-
 // initial call to the api based on the users search ingredients. 
-function websiteCall(ingr){
+function websiteCall(){
     $.ajax({
-      url: "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingr + "&apiKey=2b49753a505a43fe8dbfb610bb43e250",
+      url: spoonacularURL,
       method: "GET"
     }).then(function(initialPull){
       food = [];
