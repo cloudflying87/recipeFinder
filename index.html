@@ -11,6 +11,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.26.0/slimselect.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.26.0/slimselect.min.css" rel="stylesheet"></link>
   <link rel="stylesheet" href="assets/css/dropdown.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -104,42 +106,32 @@
       
 
       <div class="col-sm-9">
-
-        <!-- <div class='dropdown' id='intoleranceDropdown'>
-          <div class='title pointerCursor'>Select an option <i class="fa fa-angle-right"></i></div>
-          <div class='menu pointerCursor hide intolerance'>
-          </div>
-        </div> -->
-
         <div class="card">
           <div class="card-body">
+            
+            <!-- Options -->
+          
             <div>
-
               <!-- recipe Content start -->
               <div class="container">
+                <select id="intolerances" multiple>
+                </select>
                 <div id="list1" class="dropdown-check-list" tabindex="100">
                   <div class="w3-bar w3-black">
-                    <button class="w3-bar-item w3-button" onclick="openCity('London')">Food</button>
+                    <button class="w3-bar-item w3-button" id="londonButton" onclick="openCity('London')">Food</button>
                     <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Drink</button>
                   </div>
                 </div>
                 <div class ="options" id ="London">
-                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Receipe Suggestions For You!!</h1>
+                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Recipe Suggestions For You!!</h1>
                 <hr class="mt-2 mb-5">
                 <div class="row text-center text-lg-left recipe">
-                  <!-- <div class="row text-center text-lg-left"> -->
-                  <!-- <div class="col-lg-3 col-md-4 col-6">
-                    <p class="text-danger">Image Name</p>
-                    <a href="#" class="d-block mb-4 h-100"> <img class="img-fluid img-thumbnail" src="http://ourmomentoftruth.com/wp-content/uploads/2017/06/tofu-salat-640x415-300x195.jpg" alt=""> </a>
-                  </div> -->
-                  <!-- </div> -->
                 </div>
               </div>
                 <!-- recipe Content End -->
 
                 <!-- Beverages Content Start -->
-                <!-- <div class="container"> -->
-                  <div class = "options" id="Paris">
+                <div class = "options" id="Paris">
                 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
                 <hr class="mt-2 mb-5">
                 <div class="row text-center text-lg-left beverage">
