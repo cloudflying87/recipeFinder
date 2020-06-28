@@ -60,9 +60,6 @@ $(".checks1").click(function(){
     
   }
  }
-  
- 
-  
 
 })
 function writeSelect(category,categoryDisplay,appendPlace) {
