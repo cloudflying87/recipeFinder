@@ -33,8 +33,8 @@
         <!-- Your ingredients area Start --->
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style="flex-flow: wrap">
           <div class="w3-bar w3-black">
-            <button class="w3-bar-item w3-button" onclick="openMenu('search')">Search</button>
-            <button class="w3-bar-item w3-button" onclick="openMenu('listy')">Categories</button>
+            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar" onclick="openMenu('search')">Search</button>
+            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar" onclick="openMenu('listy')">Categories</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
               <span class="navbar-toggler-icon"></span>
@@ -78,7 +78,7 @@
 
                 <!-- Your ingredients input Start --->
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Enter your ingredients" aria-label="ingredients"
+                  <input type="text" class="form-control" placeholder="Enter ingredients" aria-label="ingredients"
                     aria-describedby="basic-addon2" id="ingrInpt">
                   <div class="input-group-append">
                     <button class="btn btn-warning fas fa-utensils text-danger" type="button" id="ingrBt"></button>
@@ -88,7 +88,7 @@
                 <br>
                 <!-- Your Beverages input Start --->
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Enter Your Beverages" aria-label="Beverages"
+                  <input type="text" class="form-control" placeholder="Enter an ingredient" aria-label="Beverages"
                     aria-describedby="basic-addon2" id="drinkInpt">
                   <div class="input-group-append">
                     <button class="btn btn-warning fas fa-wine-glass-alt text-danger" type="button"
@@ -101,7 +101,7 @@
 
                 </ul>
 
-                <p>Drink ingredients</p>
+                <p>Drink ingredient</p>
                 <ul>
                   <li class="ingrItem" id="drinkList">
 
@@ -182,6 +182,7 @@
     <script src="assets/javascript/cocktailDB.js"></script>
     <script src="assets/javascript/spoonacular.js"></script>
     <script src="assets/javascript/foodoptions.js"></script>
+    <script src="assets/javascript/navbar.js"></script>
 </body>
 
 </html>
