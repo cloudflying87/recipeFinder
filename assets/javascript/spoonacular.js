@@ -24,6 +24,7 @@ if (createDropdownCalled == 0){
   intoleranceDropDown()
   dietDropDown()
   createDropdownCalled = 1
+  $('#foodIngredLabel').text('Food Ingredients')
 } 
 $('#recipeSuggestion').text('Recipe Suggestions For You!!')
 }); 
