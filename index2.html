@@ -30,8 +30,10 @@
         <!-- Your ingredients area Start --->
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style="flex-flow: wrap">
           <div class="w3-bar w3-black">
-            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar" onclick="openMenu('search')">Search</button>
-            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar" onclick="openMenu('listy')">Categories</button>
+            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar"
+              onclick="openMenu('search')">Search</button>
+            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar"
+              onclick="openMenu('listy')">Categories</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
               <span class="navbar-toggler-icon"></span>
@@ -121,64 +123,68 @@
             <div>
               <!-- recipe Content start -->
               <div class="container">
-                  <div class="w3-bar w3-black">
-                    <button class="w3-bar-item w3-button" id="londonButton" onclick="openCity('London')">Food</button>
-                    <button class="w3-bar-item w3-button" id="parisButton" onclick="openCity('Paris')">Drink</button>
-                  </div>
-                  
+                <div class="w3-bar w3-black">
+                  <button class="w3-bar-item w3-button" id="londonButton" onclick="openCity('London')">Food</button>
+                  <button class="w3-bar-item w3-button" id="parisButton" onclick="openCity('Paris')">Drink</button>
                 </div>
-                <div class="options" id="London">
-                  <select id="intolerances" class="hide" multiple></select> 
-                  <select id="diet" class="hide" multiple></select> 
+
+              </div>
+              <div class="options" id="London">
+                <div class="format-dropdowns">
+
+
+                  <select id="intolerances" class="hide" multiple></select>
+                  <select id="diet" class="hide" multiple></select>
                   <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0 " id="recipeSuggestion"></h1>
                   <hr class="mt-2 mb-5">
                   <div class="row text-center text-lg-left recipe">
                   </div>
                 </div>
-                <!-- recipe Content End -->
-
-                <!-- Beverages Content Start -->
-                <div class="options" id="Paris">
-                  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
-                  <hr class="mt-2 mb-5">
-                  <div class="row text-center text-lg-left beverage">
-                  </div>
-
-                </div>
-                <!-- </div> -->
-                <!-- recipe Content End -->
               </div>
+              <!-- recipe Content End -->
+
+              <!-- Beverages Content Start -->
+              <div class="options" id="Paris">
+                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
+                <hr class="mt-2 mb-5">
+                <div class="row text-center text-lg-left beverage">
+                </div>
+
+              </div>
+              <!-- </div> -->
+              <!-- recipe Content End -->
             </div>
           </div>
         </div>
-        <!-- recipe  area End --->
+      </div>
+      <!-- recipe  area End --->
 
-        <!-- Modal -->
-        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
+      <!-- Modal -->
+      <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
 
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="assets/javascript/cocktailDB.js"></script>
-    <script src="assets/javascript/spoonacular.js"></script>
-    <script src="assets/javascript/foodoptions.js"></script>
-    <script src="assets/javascript/navbar.js"></script>
+  </div>
+  <script src="assets/javascript/cocktailDB.js"></script>
+  <script src="assets/javascript/spoonacular.js"></script>
+  <script src="assets/javascript/foodoptions.js"></script>
+  <script src="assets/javascript/navbar.js"></script>
 </body>
 
 </html>

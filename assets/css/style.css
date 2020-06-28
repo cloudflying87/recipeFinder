@@ -244,6 +244,11 @@ img{
     width: 100%
   }
 
+  .format-dropdowns{
+    padding-left: 59px;
+    padding-right: 59px;
+  }
+
   @media (max-width: 1200px) {
 
     body{
