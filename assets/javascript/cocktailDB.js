@@ -55,7 +55,7 @@ function displayButtons(drinks){
     //newImg.css({"margin-top":"0px","padding-top":"0px","border-top":"0px"})
     newLink.append(newImg);
     newDiv.append(newText,newLink);
-    $(".beverage").append(newDiv);
+    $(".beverage").prepend(newDiv);
  }
  
 }

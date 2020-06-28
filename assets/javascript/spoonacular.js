@@ -80,7 +80,7 @@ function renderFood(text){
   c.attr("nam", text);
   a.css("list-style-type","none");
   a.text(text);
-  a.append(c);
+  a.prepend(c);
   $("#ingrList").append(a);
   
   creatingURL();
