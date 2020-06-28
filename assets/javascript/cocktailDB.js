@@ -23,7 +23,7 @@ function renderDrinks(text){
   $("#drinkList").text(text);
   $("#drinkList").append(c);
   lookupByIngredient(text);
-    
+  $('#drinkIngLabel').text('Drink Ingredients')
 };
 
 $( "#drinkList" ).click(function() {
@@ -57,6 +57,7 @@ function displayButtons(drinks){
     newDiv.append(newText,newLink);
     $(".beverage").append(newDiv);
  }
+ 
 }
 
 function lookupByIngredient(ingredient){

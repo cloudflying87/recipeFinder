@@ -7,6 +7,7 @@ var hmm = 1;
 var dietSelect =''
 var intoleranceSelect = ''
 var excludeSelect = ''
+var createDropdownCalled = 0
 
 $("#ingrBt").click(function(){
   event.preventDefault()
@@ -18,6 +19,14 @@ $("#ingrBt").click(function(){
         Ingr += item
       }
 renderFood(item)
+
+if (createDropdownCalled == 0){
+  intoleranceDropDown()
+  dietDropDown()
+  createDropdownCalled = 1
+  $('#foodIngredLabel').text('Food Ingredients')
+} 
+$('#recipeSuggestion').text('Recipe Suggestions For You!!')
 }); 
 
 function openCity(cityName) {
@@ -25,7 +34,6 @@ function openCity(cityName) {
   var x = document.getElementsByClassName("options");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
-    
   }
   
   if (cityName == 'London'){
@@ -63,7 +71,7 @@ function renderFood(text){
   a.append(c);
   $("#ingrList").append(a);
   
-  websiteCall(Ingr);
+  creatingURL();
 };
 
 $(document).on('click','.delete', function(event){
@@ -84,20 +92,35 @@ $(document).on('click','.delete', function(event){
   else{
     Ingr = Ingr.replace(testy, "");
   }
- $(".recipe").empty();
-  websiteCall(Ingr)
+  creatingURL()
 });
 var spoonacularURL 
 function creatingURL (){
-  
-"https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingr + "&diet=" + dietSelect + "&exlcudeIngredients="+ excludeSelect +"&intolerances="+ intoleranceSelect +"&apiKey=2b49753a505a43fe8dbfb610bb43e250"
+  $(".recipe").empty();
+  spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
+  console.log(dietSelect + "diet")
+  if (Ingr !==''){
+    spoonacularURL += Ingr
+  } 
+  if (dietSelect !==''){
+    spoonacularURL += "&diet=" + dietSelect
+  }
+  if (intoleranceSelect !== ''){
+    spoonacularURL += "&intolerances="+ intoleranceSelect
+  }
+  if (excludeSelect !== ''){
+    spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
+  }
+  spoonacularURL += "&apiKey=2b49753a505a43fe8dbfb610bb43e250"
+  console.log(spoonacularURL)
+  websiteCall()
+
 }
 
-
 // initial call to the api based on the users search ingredients. 
-function websiteCall(ingr){
+function websiteCall(){
     $.ajax({
-      url: "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingr + "&apiKey=2b49753a505a43fe8dbfb610bb43e250",
+      url: spoonacularURL,
       method: "GET"
     }).then(function(initialPull){
       food = [];

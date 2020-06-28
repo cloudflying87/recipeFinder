@@ -26,9 +26,6 @@
 
   <div class="container-fluid mt-3" id="card-container">
     <div class="row" style="align-items: flex-start">
-
-
-
       <div class="col-xl-3" id="sideNav">
         <!-- Your ingredients area Start --->
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style="flex-flow: wrap">
@@ -45,7 +42,6 @@
             <div class="options1" id="listy">
               <!-- Ingredient category list --->
               <div id="accordion">
-
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h3 class="mb-0">
@@ -96,12 +92,12 @@
                   </div>
                 </div>
                 <!-- Your Beverages input End --->
-                <p>Food ingredients</p>
+                <p id="foodIngredLabel"></p>
                 <ul id="ingrList">
 
                 </ul>
 
-                <p>Drink ingredient</p>
+                <p id="drinkIngLabel"></p>
                 <ul>
                   <li class="ingrItem" id="drinkList">
 
@@ -116,12 +112,9 @@
       </div>
 
       <!-- recipe area start --->
-
-
-
       <div class="col-xl-9">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" id="mainCard">
 
             <!-- Options -->
 
@@ -132,9 +125,12 @@
                     <button class="w3-bar-item w3-button" id="londonButton" onclick="openCity('London')">Food</button>
                     <button class="w3-bar-item w3-button" id="parisButton" onclick="openCity('Paris')">Drink</button>
                   </div>
+                  
                 </div>
                 <div class="options" id="London">
-                  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Recipe Suggestions For You!!</h1>
+                  <select id="intolerances" class="hide" multiple></select> 
+                  <select id="diet" class="hide" multiple></select> 
+                  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0 " id="recipeSuggestion"></h1>
                   <hr class="mt-2 mb-5">
                   <div class="row text-center text-lg-left recipe">
                   </div>

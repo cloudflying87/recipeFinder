@@ -19,7 +19,9 @@
   margin: 100px;
   z-index: 1;
 }
-
+.hide {
+	display: none;
+}
 .dropdown .title{
 	margin: .3em .3em .3em .3em;	
 	width: 100%;
