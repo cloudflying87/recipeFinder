@@ -121,16 +121,16 @@
             <div>
               <!-- recipe Content start -->
               <div class="container">
-                
-                  <select id="intolerances" multiple></select>
-                  
                   <div class="w3-bar w3-black">
                     <button class="w3-bar-item w3-button" id="londonButton" onclick="openCity('London')">Food</button>
                     <button class="w3-bar-item w3-button" id="parisButton" onclick="openCity('Paris')">Drink</button>
                   </div>
+                  
                 </div>
                 <div class="options" id="London">
-                  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Recipe Suggestions For You!!</h1>
+                  <select id="intolerances" class="hide" multiple></select> 
+                  <select id="diet" class="hide" multiple></select> 
+                  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0 " id="recipeSuggestion"></h1>
                   <hr class="mt-2 mb-5">
                   <div class="row text-center text-lg-left recipe">
                   </div>

@@ -3,6 +3,7 @@
 
 https://api.spoonacular.com/recipes/search?query=cheese&number=2&diet=vegetarian&exlcudeIngredients=eggs&intolerances=gluten&apiKey=0dcf6018121d4ae3ab90ebb53ead0081 
 */
+var intoleranceSelection
 var displayIntolerances = ['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat']
 
 var intolerances = ['dairy','egg','gluten','grain','peanut','seafood','sesame','shellfish','soy','sulfite','tree','nut','wheat']
@@ -31,52 +32,54 @@ function categoryCall(category,categoryDisplay,appendPlace) {
         $(appendPlace).append(NewDiv)   
     }
 }
-createDropDown()
-function createDropDown(){
-  var intol = new SlimSelect({
+writeSelect(intolerances,displayIntolerances,'#intolerances')
+writeSelect(dietrestrictions,displayDietRestrictions,'#diet')
+
+function writeSelect(category,categoryDisplay,appendPlace) {
+  for (let index= 0; index < category.length; index++) {
+      var newOption = $('<option>').attr('value',category[index]).text(categoryDisplay[index])
+      $(appendPlace).append(newOption)
+  }
+}
+
+function intoleranceDropDown(){
+  $('#intolerances').removeClass("hide")
+  new SlimSelect({
     select: '#intolerances',
     showSearch: false,
+    placeholder: 'Food Intolerances',
     onChange: (data) => {
-      // workingDropdown(data)
-    },
+      intoleranceSelect = ''
+      workingDropdown(data)
+    }
   })
-  
-  intol.set(['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat'])
-}
-  //   var select = new SlimSelect({
-  //   select: '#select',
-  //   showSearch: false,
-  //   onChange: (data) => {
-  //     workingDropdown(data)},
-  // })
-  
-  // select.set(['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat'])
+  }
 
-
-
-/*
-  var selectDynamic = $('<select>').attr('id','intoleranceSelect')
-  $('#intolerances').append(selectDynamic)
-  
-  {/* <select id="intolerancesSelect" multiple></select> 
-*/
-var intoleranceSelection = ''
 function workingDropdown(data){
   for (let i = 0; i < data.length; i++) {
-    intoleranceSelect = (data[i].value)  
-    console.log(intoleranceSelect)
-    // websiteCall()
+    intoleranceSelect += (data[i].value) +"+"
   }
-  
+  creatingURL()
 }
 
-// addingOptions(dietrestrictions,displayDietRestrictions,'.diet');
+function dietDropDown(){
+  $('#diet').removeClass("hide")
+  new SlimSelect({
+    select: '#diet',
+    showSearch: false,
+    placeholder: 'Choose Diet',
+    onChange: (data) => {
+      dietSelect = ''
+      workingDropdownDiet(data)
+    }
+  })
+  console.log('diet')
+  }
 
-// writeSelect(intolerances,displayIntolerances,'#intolerances');
-
-// function writeSelect(category,categoryDisplay,appendPlace) {
-//   for (let index= 0; index < category.length; index++) {
-//       var newOption = $('<option>').attr('value',category[index]).text(categoryDisplay[index])
-//       $(appendPlace).append(newOption)
-//   }
-// }
+function workingDropdownDiet(data){
+  for (let i = 0; i < data.length; i++) {
+    dietSelect += (data[i].value) +"+"
+    console.log(dietSelect)
+  }
+  creatingURL()
+}

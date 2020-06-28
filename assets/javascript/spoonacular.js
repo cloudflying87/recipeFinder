@@ -7,6 +7,7 @@ var hmm = 1;
 var dietSelect =''
 var intoleranceSelect = ''
 var excludeSelect = ''
+var createDropdownCalled = 0
 
 $("#ingrBt").click(function(){
   event.preventDefault()
@@ -18,6 +19,13 @@ $("#ingrBt").click(function(){
         Ingr += item
       }
 renderFood(item)
+
+if (createDropdownCalled == 0){
+  intoleranceDropDown()
+  dietDropDown()
+  createDropdownCalled = 1
+} 
+$('#recipeSuggestion').text('Recipe Suggestions For You!!')
 }); 
 
 function openCity(cityName) {
@@ -89,7 +97,7 @@ $(document).on('click','.delete', function(event){
 var spoonacularURL 
 function creatingURL (){
   spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
-
+  console.log(dietSelect + "diet")
   if (Ingr !==''){
     spoonacularURL += Ingr
   } 
@@ -103,7 +111,9 @@ function creatingURL (){
     spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
   }
   spoonacularURL += "&apiKey=2b49753a505a43fe8dbfb610bb43e250"
+  console.log(spoonacularURL)
   websiteCall()
+
 }
 
 // initial call to the api based on the users search ingredients. 
