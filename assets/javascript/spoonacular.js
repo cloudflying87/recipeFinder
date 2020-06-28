@@ -91,11 +91,11 @@ $(document).on('click','.delete', function(event){
   else{
     Ingr = Ingr.replace(testy, "");
   }
- $(".recipe").empty();
   creatingURL()
 });
 var spoonacularURL 
 function creatingURL (){
+  $(".recipe").empty();
   spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
   console.log(dietSelect + "diet")
   if (Ingr !==''){
