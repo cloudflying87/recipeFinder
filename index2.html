@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Recipe Search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/b6cdd9ba7c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.26.0/slimselect.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.26.0/slimselect.min.css" rel="stylesheet">
+  </link>
+  <link rel="stylesheet" href="assets/css/dropdown.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+  <nav id="page_header" class="navbar navbar-default sticky-top py-3">
+    <h1 class="text-white">Recipe Search by Ingredients</h1>
+  </nav>
+
+  <div class="container-fluid mt-3" id="card-container">
+    <div class="row" style="align-items: flex-start">
+      <div class="col-xl-3" id="sideNav">
+        <!-- Your ingredients area Start --->
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style="flex-flow: wrap">
+          <div class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar" onclick="openMenu('search')">Search</button>
+            <button class="w3-bar-item w3-button navbar-buttons" data-target="#collapsibleNavbar" onclick="openMenu('listy')">Categories</button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <div class="options1" id="listy">
+              <!-- Ingredient category list --->
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h3 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne"> Food ingredients</button>
+                    </h3>
+                  </div>
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body foodOptionsList"></div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h3 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo"> Drink ingredients </button>
+                    </h3>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body drinkOptions"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Ingredient Category List end -->
+
+            </div>
+            <div class="card options1" id="search">
+              <div class="card-body">
+
+                <!-- Your ingredients input Start --->
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Enter ingredients" aria-label="ingredients"
+                    aria-describedby="basic-addon2" id="ingrInpt">
+                  <div class="input-group-append">
+                    <button class="btn btn-warning fas fa-utensils text-danger" type="button" id="ingrBt"></button>
+                  </div>
+                </div>
+                <!-- Your ingredients input End --->
+                <br>
+                <!-- Your Beverages input Start --->
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Enter an ingredient" aria-label="Beverages"
+                    aria-describedby="basic-addon2" id="drinkInpt">
+                  <div class="input-group-append">
+                    <button class="btn btn-warning fas fa-wine-glass-alt text-danger" type="button"
+                      id="drinkBt"></button>
+                  </div>
+                </div>
+                <!-- Your Beverages input End --->
+                <p id="foodIngredLabel"></p>
+                <ul id="ingrList">
+
+                </ul>
+
+                <p id="drinkIngLabel"></p>
+                <ul>
+                  <li class="ingrItem" id="drinkList">
+
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+
+      <!-- recipe area start --->
+      <div class="col-xl-9">
+        <div class="card">
+          <div class="card-body" id="mainCard">
+
+            <!-- Options -->
+
+            <div>
+              <!-- recipe Content start -->
+              <div class="container">
+                  <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button" id="londonButton" onclick="openCity('London')">Food</button>
+                    <button class="w3-bar-item w3-button" id="parisButton" onclick="openCity('Paris')">Drink</button>
+                  </div>
+                  
+                </div>
+                <div class="options" id="London">
+                  <select id="intolerances" class="hide" multiple></select> 
+                  <select id="diet" class="hide" multiple></select> 
+                  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0 " id="recipeSuggestion"></h1>
+                  <hr class="mt-2 mb-5">
+                  <div class="row text-center text-lg-left recipe">
+                  </div>
+                </div>
+                <!-- recipe Content End -->
+
+                <!-- Beverages Content Start -->
+                <div class="options" id="Paris">
+                  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Beverages Suggestions For You!!</h1>
+                  <hr class="mt-2 mb-5">
+                  <div class="row text-center text-lg-left beverage">
+                  </div>
+
+                </div>
+                <!-- </div> -->
+                <!-- recipe Content End -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- recipe  area End --->
+
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/javascript/cocktailDB.js"></script>
+    <script src="assets/javascript/spoonacular.js"></script>
+    <script src="assets/javascript/foodoptions.js"></script>
+    <script src="assets/javascript/navbar.js"></script>
+</body>
+
+</html>
