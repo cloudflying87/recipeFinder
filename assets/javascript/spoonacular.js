@@ -29,6 +29,17 @@ if (createDropdownCalled == 0){
 $('#recipeSuggestion').text('Recipe Suggestions For You!!')
 }); 
 
+function checkInput(feed){
+  var item = feed;
+      if(Ingr !== ''){
+        Ingr += ',+' + item
+      }
+      else{
+        Ingr += item
+      }
+  renderFood(item)
+}
+
 function openCity(cityName) {
   var i;
   var x = document.getElementsByClassName("options");
@@ -65,7 +76,8 @@ function renderFood(text){
   c.addClass("btn btn-warning fas fa-trash text-danger delete");
   c.css({"background":"none","border":"none"});
   a.addClass("ingrItem-"+inc);
-  c.attr("ind",inc)
+  c.attr("ind",inc);
+  c.attr("nam", text);
   a.css("list-style-type","none");
   a.text(text);
   a.append(c);
@@ -111,7 +123,7 @@ function creatingURL (){
   if (excludeSelect !== ''){
     spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
   }
-  spoonacularURL += "&apiKey=2b49753a505a43fe8dbfb610bb43e250"
+  spoonacularURL += "&apiKey=0dcf6018121d4ae3ab90ebb53ead0081"
   console.log(spoonacularURL)
   websiteCall()
 
@@ -166,7 +178,7 @@ function displayChoices(foods){
   // calling the recipe url to get the instructions
 function callRecipeURL (recipeID){
   $.ajax({
-    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=2b49753a505a43fe8dbfb610bb43e250",
+    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=0dcf6018121d4ae3ab90ebb53ead0081",
     method: "GET"
   }).then(function(data) { 
     window.open(data.sourceUrl, '_blank') 

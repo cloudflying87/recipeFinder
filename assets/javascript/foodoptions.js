@@ -23,7 +23,7 @@ function categoryCall(category,categoryDisplay,appendPlace) {
     
     for (let index= 0; index < category.length; index++) {
         var NewDiv = $('<div>').addClass("form-check form-check-inline")
-        var NewInput = $('<input>').addClass("form-check-input")
+        var NewInput = $('<input>').addClass("form-check-input checks1")
         NewInput.attr('id', category[index])
         NewInput.attr('type','checkbox')
         
@@ -35,6 +35,36 @@ function categoryCall(category,categoryDisplay,appendPlace) {
 writeSelect(intolerances,displayIntolerances,'#intolerances')
 writeSelect(dietrestrictions,displayDietRestrictions,'#diet')
 
+$(".checks1").click(function(){
+ //console.log(Ingr);
+ if(drinkCategory.includes(this.id)){
+   renderDrinks(this.id);
+
+   $(".checks1").prop('checked', false);
+   $(this).prop('checked',true);
+ }
+ else{
+  
+  if($(this).prop('checked')){
+    console.log("is checked")
+    checkInput(this.id);
+  }
+  else{
+    console.log("is not checked")
+    var yesty = this.id;
+    Ingr = Ingr.replace(yesty, "");
+    console.log(Ingr);
+    creatingURL();
+    $(".delete").remove();
+    $("#ingrList").empty();
+    
+  }
+ }
+  
+ 
+  
+
+})
 function writeSelect(category,categoryDisplay,appendPlace) {
   for (let index= 0; index < category.length; index++) {
       var newOption = $('<option>').attr('value',category[index]).text(categoryDisplay[index])
