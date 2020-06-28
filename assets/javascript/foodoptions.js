@@ -31,19 +31,35 @@ function categoryCall(category,categoryDisplay,appendPlace) {
         $(appendPlace).append(NewDiv)   
     }
 }
-
-
+createDropDown()
 function createDropDown(){
   var intol = new SlimSelect({
     select: '#intolerances',
     showSearch: false,
     onChange: (data) => {
-      workingDropdown(data)},
+      // workingDropdown(data)
+    },
   })
+  
   intol.set(['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat'])
-{/* <select id="intolerances" multiple></select> */}
 }
+  //   var select = new SlimSelect({
+  //   select: '#select',
+  //   showSearch: false,
+  //   onChange: (data) => {
+  //     workingDropdown(data)},
+  // })
+  
+  // select.set(['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat'])
 
+
+
+/*
+  var selectDynamic = $('<select>').attr('id','intoleranceSelect')
+  $('#intolerances').append(selectDynamic)
+  
+  {/* <select id="intolerancesSelect" multiple></select> 
+*/
 var intoleranceSelection = ''
 function workingDropdown(data){
   for (let i = 0; i < data.length; i++) {

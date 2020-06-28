@@ -26,9 +26,6 @@
 
   <div class="container-fluid mt-3" id="card-container">
     <div class="row" style="align-items: flex-start">
-
-
-
       <div class="col-xl-3" id="sideNav">
         <!-- Your ingredients area Start --->
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style="flex-flow: wrap">
@@ -45,7 +42,6 @@
             <div class="options1" id="listy">
               <!-- Ingredient category list --->
               <div id="accordion">
-
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h3 class="mb-0">
@@ -101,7 +97,7 @@
 
                 </ul>
 
-                <p>Drink ingredients</p>
+                <p id="drinkIngLabel"></p>
                 <ul>
                   <li class="ingrItem" id="drinkList">
 
@@ -116,18 +112,18 @@
       </div>
 
       <!-- recipe area start --->
-
-
-
       <div class="col-xl-9">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" id="mainCard">
 
             <!-- Options -->
 
             <div>
               <!-- recipe Content start -->
               <div class="container">
+                
+                  <select id="intolerances" multiple></select>
+                  
                   <div class="w3-bar w3-black">
                     <button class="w3-bar-item w3-button" id="londonButton" onclick="openCity('London')">Food</button>
                     <button class="w3-bar-item w3-button" id="parisButton" onclick="openCity('Paris')">Drink</button>

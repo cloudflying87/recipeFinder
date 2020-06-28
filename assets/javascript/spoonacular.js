@@ -103,7 +103,6 @@ function creatingURL (){
     spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
   }
   spoonacularURL += "&apiKey=2b49753a505a43fe8dbfb610bb43e250"
-  
   websiteCall()
 }
 
