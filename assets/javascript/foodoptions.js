@@ -1,3 +1,4 @@
+
 /*https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=2b49753a505a43fe8dbfb610bb43e250
 
 https://api.spoonacular.com/recipes/search?query=cheese&number=2&diet=vegetarian&exlcudeIngredients=eggs&intolerances=gluten&apiKey=0dcf6018121d4ae3ab90ebb53ead0081 
@@ -17,8 +18,6 @@ var drinkCategory = ['gin','vodka','rum']
 categoryCall(foodCategory,foodCategory,".foodOptionsList");
 categoryCall(drinkCategory,drinkCategory,".drinkOptions");
 
-// addingOptions(dietrestrictions,displayDietRestrictions,'.diet');
-
 function categoryCall(category,categoryDisplay,appendPlace) {
     
     for (let index= 0; index < category.length; index++) {
@@ -33,27 +32,35 @@ function categoryCall(category,categoryDisplay,appendPlace) {
     }
 }
 
-writeSelect(intolerances,displayIntolerances,'#intolerances');
 
-function writeSelect(category,categoryDisplay,appendPlace) {
-    
-  for (let index= 0; index < category.length; index++) {
-      var newOption = $('<option>').attr('value',category[index]).text(categoryDisplay[index])
-      $(appendPlace).append(newOption)
-  }
+function createDropDown(){
+  var intol = new SlimSelect({
+    select: '#intolerances',
+    showSearch: false,
+    onChange: (data) => {
+      workingDropdown(data)},
+  })
+  intol.set(['Dairy','Egg','Gluten','Grain','Peanut','Seafood','Sesame','Shellfish','Soy','Sulfite','Tree','Nut','Wheat'])
+{/* <select id="intolerances" multiple></select> */}
 }
-new SlimSelect({
-  select: '#intolerances',
-  showSearch: false,
-  onChange: (data) => {
-    workingDropdown(data)},
-})
+
 var intoleranceSelection = ''
 function workingDropdown(data){
   for (let i = 0; i < data.length; i++) {
-    intoleranceSelection = (data[i].value)  
-    console.log(intoleranceSelection)
+    intoleranceSelect = (data[i].value)  
+    console.log(intoleranceSelect)
+    // websiteCall()
   }
   
 }
 
+// addingOptions(dietrestrictions,displayDietRestrictions,'.diet');
+
+// writeSelect(intolerances,displayIntolerances,'#intolerances');
+
+// function writeSelect(category,categoryDisplay,appendPlace) {
+//   for (let index= 0; index < category.length; index++) {
+//       var newOption = $('<option>').attr('value',category[index]).text(categoryDisplay[index])
+//       $(appendPlace).append(newOption)
+//   }
+// }
