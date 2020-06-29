@@ -26,11 +26,12 @@ function categoryCall(category,categoryDisplay,appendPlace,calass) {
     for (let index= 0; index < category.length; index++) {
       incs++;  
       var NewDiv = $('<div>').addClass("form-check form-check-inline")
-        var NewInput = $('<input>').addClass("form-check-input checks1 "+calass)
+        var NewInput = $('<input>').addClass("form-check-input checks1 "+calass+" fmp-"+categoryDisplay[index])
 
         NewInput.attr('id', category[index])
         NewInput.attr('type','checkbox')
-        NewInput.attr("inds",incs);
+        NewInput.attr("inds",categoryDisplay[index]);
+        console.log(categoryDisplay[index]+" "+incs)
         
         var NewLabel = $('<label>').addClass('form-check-label').text(categoryDisplay[index])
         NewDiv.append(NewInput,NewLabel)
@@ -52,6 +53,7 @@ $(".checks1").click(function(){
   
   if($(this).prop('checked')){
     console.log("is checked")
+    
     checkInput(this.id);
   }
   else{
@@ -59,8 +61,9 @@ $(".checks1").click(function(){
     var yesty = this.id;
     //Ingr = Ingr.replace(yesty, "");
     var bee = $(this).attr("inds");
-    $(".ingrItem-"+$(this).attr("inds")).remove();
-    $(".dlt-"+$(this).attr("inds")).remove();
+    $(".ingItm-"+$(this).attr("inds")).remove();
+    $(".dtl-"+$(this).attr("inds")).remove();
+    console.log($(this).attr("inds"))
     if (Ingr.indexOf('+')>-1)
   {
     if(bee==hmm){
@@ -80,8 +83,7 @@ $(".checks1").click(function(){
 
     console.log(Ingr);
     creatingURL();
-    $(".delete").remove();
-    $("#ingrList").empty();
+
   }
  }
  if (createDropdownCalled == 0){
