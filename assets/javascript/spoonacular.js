@@ -35,7 +35,7 @@ if (createDropdownCalled == 0){
   createDropdownCalled = 1
   $('#foodIngredLabel').text('Food Ingredients')
 } 
-$('#recipeSuggestion').text('Recipe Suggestions For You!!')
+
 }); 
 
 function checkInput(feed){
@@ -154,6 +154,11 @@ function websiteCall(){
       method: "GET"
     }).then(function(initialPull){
       food = []; 
+      if(initialPull.results.length ==0){
+        $('#recipeSuggestion').text('No Recipes Found. Change your search criteria.')
+      } else {
+        $('#recipeSuggestion').text('Recipe Suggestions For You!!')
+      }
       for (let i = 0; i < initialPull.results.length; i++) {
         food.push(initialPull.results[i]) 
       }
