@@ -17,6 +17,7 @@ var foodCategory = ['Bread', 'Rice', 'Cheese', 'Egg', 'Fish','Chicken', 'Prawn',
 var drinkCategory = ['gin','vodka','rum']
 
 var incs = 0;
+var weeb = 1;
 
 categoryCall(foodCategory,foodCategory,".foodOptionsList", "foodie");
 categoryCall(drinkCategory,drinkCategory,".drinkOptions", "drinky");
@@ -43,6 +44,9 @@ writeSelect(dietrestrictions,displayDietRestrictions,'#diet')
 
 $(".checks1").click(function(){
  //console.log(Ingr);
+ 
+ 
+ 
  if(drinkCategory.includes(this.id)){
    renderDrinks(this.id);
 
@@ -53,36 +57,46 @@ $(".checks1").click(function(){
   
   if($(this).prop('checked')){
     console.log("is checked")
-    
+    $(this).attr("indie",weeb);
+    weeb++;
     checkInput(this.id);
   }
   else{
     console.log("is not checked")
     var yesty = this.id;
     //Ingr = Ingr.replace(yesty, "");
-    var bee = $(this).attr("inds");
+    var bee = $(this).attr("ind");
     $(".ingItm-"+$(this).attr("inds")).remove();
     $(".dtl-"+$(this).attr("inds")).remove();
     console.log($(this).attr("inds"))
     if (Ingr.indexOf('+')>-1)
   {
-    if(bee==hmm){
+    console.log(weeb+" "+hmm)
+    if($(this).attr("indie")==hmm){
       Ingr = Ingr.replace(yesty+",+", "");
+      
       hmm++;
+      console.log("700")
+      
+      
     }
     else{
       Ingr = Ingr.replace(',+'+yesty, "");
+      console.log("800")
     }
   }
   else{
     Ingr = Ingr.replace(yesty, "");
+    console.log("am i happending");
     $(".recipe").empty();
     //console.log("jalapenos")
   }
 
-
+    
     console.log(Ingr);
+    
     creatingURL();
+
 
   }
  }
