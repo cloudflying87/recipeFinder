@@ -1,5 +1,13 @@
 var drink = ''
 
+// Listener for enter button on drink input field. 
+$("#drinkInpt").keyup(function(){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    $("#drinkBt").click();
+  }
+});
+
 $("#drinkBt").click(function(){
   event.preventDefault()
   var item = $("#drinkInpt").val().trim()
@@ -16,12 +24,12 @@ $("#ingrBt").click(function(){
 
 function renderDrinks(text){
   $("#drinkInpt").val('')
-  var b = $("#drinkList");
   var c = $("<button>");
+  var b = $("#drinkList");
   c.addClass("btn btn-warning fas fa-trash text-danger delete-btn");
   c.css({"background":"none","border":"none"});
   $("#drinkList").text(text);
-  $("#drinkList").append(c);
+  $("#drinkList").prepend(c);
   lookupByIngredient(text);
   $('#drinkIngLabel').text('Drink Ingredients')
 };
@@ -31,8 +39,8 @@ $( "#drinkList" ).click(function() {
   $("#drinkList").text("");
   $(".beverage").empty();
 });
-var drinks = [];
 
+var drinks = [];
 function displayButtons(drinks){
   for (let index = 0; index < 12; index++) {
     var newDiv = $("<button>").addClass("col-lg-3 col-md-4 col-6 drink-btn button");

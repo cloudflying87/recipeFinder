@@ -9,6 +9,14 @@ var intoleranceSelect = ''
 var excludeSelect = ''
 var createDropdownCalled = 0
 
+// Listener for enter button on drink input field. 
+$("#ingrInpt").keyup(function(){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    $("#ingrBt").click();
+  }
+});
+
 $("#ingrBt").click(function(){
   event.preventDefault()
   var item = $("#ingrInpt").val().trim()
