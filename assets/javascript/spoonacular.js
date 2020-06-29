@@ -82,7 +82,7 @@ function renderFood(text){
   $(".recipe").empty();
   var a = $("<li>");
   var c = $("<button>");
-  c.addClass("btn btn-warning fas fa-trash text-danger delete");
+  c.addClass("btn btn-warning fas fa-trash text-danger delete dlt-"+inc);
   c.css({"background":"none","border":"none"});
   a.addClass("ingrItem-"+inc);
   c.attr("ind",inc);
