@@ -109,11 +109,11 @@ $(document).on('click','.delete', function(event){
 var spoonacularURL 
 function creatingURL (){
   $(".recipe").empty();
-  spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
-  // spoonacularURL = "https://api.spoonacular.com/recipes/complexSearch?query="
+  // spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
+  spoonacularURL = "https://api.spoonacular.com/recipes/complexSearch?query="
   
   if (Ingr !==''){
-    spoonacularURL +=  Ingr
+    spoonacularURL += Ingr
   } 
   if (dietSelect !==''){
     spoonacularURL += "&diet=" + dietSelect
@@ -136,10 +136,9 @@ function websiteCall(){
       url: spoonacularURL,
       method: "GET"
     }).then(function(initialPull){
-      food = [];
-      
-      for (let i = 0; i < initialPull.length; i++) {
-        food.push(initialPull[i]) 
+      food = []; 
+      for (let i = 0; i < initialPull.results.length; i++) {
+        food.push(initialPull.results[i]) 
       }
       displayChoices(food);
       createDropDown();
