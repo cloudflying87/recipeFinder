@@ -18,6 +18,7 @@ There are many things that we could do for further development, but the top thre
     3. Taking the recipe and print it within our own site instead of taking the user away from our site.
 
 [GitHub Repo](https://github.com/cloudflying87/recipeFinder)
+
 [Deployed Web Application](https://cloudflying87.github.io/recipeFinder/)
 
-[Homepage](https://github.com/cloudflying87/recipeFinder/blob/master/assets/img/2020-06-28-21-06-32.png)
+![Homepage of Deployed Site](https://github.com/cloudflying87/recipeFinder/blob/master/assets/img/2020-06-28-21-06-32.png)
