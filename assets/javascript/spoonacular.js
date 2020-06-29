@@ -110,9 +110,10 @@ var spoonacularURL
 function creatingURL (){
   $(".recipe").empty();
   spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
-  console.log(dietSelect + "diet")
+  // spoonacularURL = "https://api.spoonacular.com/recipes/complexSearch?query="
+  
   if (Ingr !==''){
-    spoonacularURL += Ingr
+    spoonacularURL +=  Ingr
   } 
   if (dietSelect !==''){
     spoonacularURL += "&diet=" + dietSelect
