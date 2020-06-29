@@ -8,7 +8,7 @@ var dietSelect =''
 var intoleranceSelect = ''
 var excludeSelect = ''
 var createDropdownCalled = 0
-var APIKey = '2b49753a505a43fe8dbfb610bb43e250'
+var APIKey = '365c9627a5cc46c393eeb7d957446fe0'
 
 // Listener for enter button on drink input field. 
 $("#ingrInpt").keyup(function(){
@@ -82,9 +82,9 @@ function renderFood(text){
   $(".recipe").empty();
   var a = $("<li>");
   var c = $("<button>");
-  c.addClass("btn btn-warning fas fa-trash text-danger delete dlt-"+inc);
+  c.addClass("btn btn-warning fas fa-trash text-danger delete dlt-"+inc+" dtl-"+text);
   c.css({"background":"none","border":"none"});
-  a.addClass("ingrItem-"+inc);
+  a.addClass("ingrItem-"+inc+" ingItm-"+text);
   c.attr("ind",inc);
   c.attr("nam", text);
   a.css("list-style-type","none");
@@ -99,6 +99,8 @@ $(document).on('click','.delete', function(event){
   var testy = $(".ingrItem-"+$(this).attr("ind")).text();
   var be = $(this).attr("ind");
   this.remove();
+  //console.log($(this).attr("ind").text());
+  $(".fmp-"+testy).prop('checked', false);
   $(".ingrItem-"+$(this).attr("ind")).remove();
   if (Ingr.indexOf('+')>-1)
   {
