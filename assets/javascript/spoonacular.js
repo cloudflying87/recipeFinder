@@ -132,7 +132,7 @@ function creatingURL (){
   if (excludeSelect !== ''){
     spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
   }
-  spoonacularURL += "&apiKey=0dcf6018121d4ae3ab90ebb53ead0081"
+  spoonacularURL += "&apiKey=0301fd798dde4de0ae1ba50d8253f2ad"
   console.log(spoonacularURL)
   websiteCall()
 
@@ -186,7 +186,7 @@ function displayChoices(foods){
   // calling the recipe url to get the instructions
 function callRecipeURL (recipeID){
   $.ajax({
-    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=0dcf6018121d4ae3ab90ebb53ead0081",
+    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=0301fd798dde4de0ae1ba50d8253f2ad",
     method: "GET"
   }).then(function(data) { 
     window.open(data.sourceUrl, '_blank') 
