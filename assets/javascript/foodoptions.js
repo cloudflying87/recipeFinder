@@ -16,16 +16,21 @@ var foodCategory = ['Bread', 'Rice', 'Cheese', 'Egg', 'Fish','Chicken', 'Prawn',
 
 var drinkCategory = ['gin','vodka','rum']
 
-categoryCall(foodCategory,foodCategory,".foodOptionsList");
-categoryCall(drinkCategory,drinkCategory,".drinkOptions");
+var incs = 0;
 
-function categoryCall(category,categoryDisplay,appendPlace) {
+categoryCall(foodCategory,foodCategory,".foodOptionsList", "foodie");
+categoryCall(drinkCategory,drinkCategory,".drinkOptions", "drinky");
+
+function categoryCall(category,categoryDisplay,appendPlace,calass) {
     
     for (let index= 0; index < category.length; index++) {
-        var NewDiv = $('<div>').addClass("form-check form-check-inline")
-        var NewInput = $('<input>').addClass("form-check-input checks1")
+      incs++;  
+      var NewDiv = $('<div>').addClass("form-check form-check-inline")
+        var NewInput = $('<input>').addClass("form-check-input checks1 "+calass)
+
         NewInput.attr('id', category[index])
         NewInput.attr('type','checkbox')
+        NewInput.attr("inds",incs);
         
         var NewLabel = $('<label>').addClass('form-check-label').text(categoryDisplay[index])
         NewDiv.append(NewInput,NewLabel)
@@ -40,7 +45,7 @@ $(".checks1").click(function(){
  if(drinkCategory.includes(this.id)){
    renderDrinks(this.id);
 
-   $(".checks1").prop('checked', false);
+   $(".drinky").prop('checked', false);
    $(this).prop('checked',true);
  }
  else{
@@ -52,11 +57,31 @@ $(".checks1").click(function(){
   else{
     console.log("is not checked")
     var yesty = this.id;
+    //Ingr = Ingr.replace(yesty, "");
+    var bee = $(this).attr("inds");
+    $(".ingrItem-"+$(this).attr("inds")).remove();
+    $(".dlt-"+$(this).attr("inds")).remove();
+    if (Ingr.indexOf('+')>-1)
+  {
+    if(bee==hmm){
+      Ingr = Ingr.replace(yesty+",+", "");
+      hmm++;
+    }
+    else{
+      Ingr = Ingr.replace(',+'+yesty, "");
+    }
+  }
+  else{
     Ingr = Ingr.replace(yesty, "");
+    $(".recipe").empty();
+    //console.log("jalapenos")
+  }
+
+
     console.log(Ingr);
     creatingURL();
-    $(".delete").remove();
-    $("#ingrList").empty();
+    
+   // $("#ingrList").empty();
     
   }
  }
