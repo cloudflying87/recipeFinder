@@ -83,9 +83,7 @@ $(".checks1").click(function(){
 
     console.log(Ingr);
     creatingURL();
-    
-   // $("#ingrList").empty();
-    
+
   }
  }
  if (createDropdownCalled == 0){
