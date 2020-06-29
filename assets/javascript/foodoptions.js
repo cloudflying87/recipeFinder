@@ -80,13 +80,25 @@ $(".checks1").click(function(){
 
     console.log(Ingr);
     creatingURL();
+<<<<<<< HEAD
     
    // $("#ingrList").empty();
     
+=======
+    $(".delete").remove();
+    $("#ingrList").empty();
+>>>>>>> 12a61879c46a6c65b5632e83b6370d51da6b3db8
   }
  }
-
+ if (createDropdownCalled == 0){
+  intoleranceDropDown()
+  dietDropDown()
+  createDropdownCalled = 1
+  $('#foodIngredLabel').text('Food Ingredients')
+} 
+$('#recipeSuggestion').text('Recipe Suggestions For You!!')
 })
+
 function writeSelect(category,categoryDisplay,appendPlace) {
   for (let index= 0; index < category.length; index++) {
       var newOption = $('<option>').attr('value',category[index]).text(categoryDisplay[index])

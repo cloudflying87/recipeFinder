@@ -8,6 +8,7 @@ var dietSelect =''
 var intoleranceSelect = ''
 var excludeSelect = ''
 var createDropdownCalled = 0
+var APIKey = '2b49753a505a43fe8dbfb610bb43e250'
 
 // Listener for enter button on drink input field. 
 $("#ingrInpt").keyup(function(){
@@ -34,7 +35,7 @@ if (createDropdownCalled == 0){
   createDropdownCalled = 1
   $('#foodIngredLabel').text('Food Ingredients')
 } 
-$('#recipeSuggestion').text('Recipe Suggestions For You!!')
+
 }); 
 
 function checkInput(feed){
@@ -138,7 +139,9 @@ function creatingURL (){
   if (excludeSelect !== ''){
     spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
   }
-  spoonacularURL += "&apiKey=2b49753a505a43fe8dbfb610bb43e250"
+
+  spoonacularURL += "&apiKey="+ APIKey
+
   console.log(spoonacularURL)
   websiteCall()
 
@@ -151,6 +154,11 @@ function websiteCall(){
       method: "GET"
     }).then(function(initialPull){
       food = []; 
+      if(initialPull.results.length ==0){
+        $('#recipeSuggestion').text('No Recipes Found. Change your search criteria.')
+      } else {
+        $('#recipeSuggestion').text('Recipe Suggestions For You!!')
+      }
       for (let i = 0; i < initialPull.results.length; i++) {
         food.push(initialPull.results[i]) 
       }
@@ -199,7 +207,7 @@ function displayChoices(foods){
   // calling the recipe url to get the instructions
 function callRecipeURL (recipeID){
   $.ajax({
-    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=2b49753a505a43fe8dbfb610bb43e250",
+    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey="+ APIKey,
     method: "GET"
   }).then(function(data) { 
     window.open(data.sourceUrl, '_blank') 
