@@ -8,6 +8,7 @@ var dietSelect =''
 var intoleranceSelect = ''
 var excludeSelect = ''
 var createDropdownCalled = 0
+var APIKey = '2b49753a505a43fe8dbfb610bb43e250'
 
 // Listener for enter button on drink input field. 
 $("#ingrInpt").keyup(function(){
@@ -139,7 +140,7 @@ function creatingURL (){
     spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
   }
 
-  spoonacularURL += "&apiKey=0301fd798dde4de0ae1ba50d8253f2ad"
+  spoonacularURL += "&apiKey="+ APIKey
 
   console.log(spoonacularURL)
   websiteCall()
@@ -201,7 +202,7 @@ function displayChoices(foods){
   // calling the recipe url to get the instructions
 function callRecipeURL (recipeID){
   $.ajax({
-    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey=0301fd798dde4de0ae1ba50d8253f2ad",
+    url: "https://api.spoonacular.com/recipes/" + recipeID +"/information?includeNutrition=false&apiKey="+ APIKey,
     method: "GET"
   }).then(function(data) { 
     window.open(data.sourceUrl, '_blank') 
