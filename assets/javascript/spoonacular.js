@@ -111,6 +111,8 @@ $(document).on('click','.delete', function(event){
   }
   else{
     Ingr = Ingr.replace(testy, "");
+    $(".recipe").empty();
+    //console.log("jalapenos")
   }
   creatingURL()
 });
@@ -123,6 +125,10 @@ function creatingURL (){
   if (Ingr !==''){
     spoonacularURL += Ingr
   } 
+  else{
+    $(".recipe").empty();
+    //console.log("mangos");
+  }
   if (dietSelect !==''){
     spoonacularURL += "&diet=" + dietSelect
   }
@@ -132,7 +138,9 @@ function creatingURL (){
   if (excludeSelect !== ''){
     spoonacularURL += "&exlcudeIngredients="+ excludeSelect  
   }
+
   spoonacularURL += "&apiKey=0301fd798dde4de0ae1ba50d8253f2ad"
+
   console.log(spoonacularURL)
   websiteCall()
 
@@ -148,8 +156,15 @@ function websiteCall(){
       for (let i = 0; i < initialPull.results.length; i++) {
         food.push(initialPull.results[i]) 
       }
-      displayChoices(food);
-      createDropDown();
+      if (Ingr !==''){
+        displayChoices(food);
+        createDropDown();
+      } 
+      else{
+        $(".recipe").empty();
+        console.log("mangos");
+      }
+      
     }); 
   }
 
