@@ -101,7 +101,7 @@ $(document).on('click','.delete', function(event){
   var testy = $(".ingrItem-"+$(this).attr("ind")).text();
   var be = $(this).attr("ind");
   this.remove();
-  //console.log($(this).attr("ind").text());
+  
   $(".fmp-"+testy).prop('checked', false);
   $(".ingrItem-"+$(this).attr("ind")).remove();
   if (Ingr.indexOf('+')>-1)
@@ -117,14 +117,14 @@ $(document).on('click','.delete', function(event){
   else{
     Ingr = Ingr.replace(testy, "");
     $(".recipe").empty();
-    //console.log("jalapenos")
+    
   }
   creatingURL()
 });
 var spoonacularURL 
 function creatingURL (){
   $(".recipe").empty();
-  // spoonacularURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients="
+  
   spoonacularURL = "https://api.spoonacular.com/recipes/complexSearch?query="
   
   if (Ingr !==''){
@@ -132,7 +132,7 @@ function creatingURL (){
   } 
   else{
     $(".recipe").empty();
-    //console.log("mangos");
+    
   }
   if (dietSelect !==''){
     spoonacularURL += "&diet=" + dietSelect
@@ -146,7 +146,7 @@ function creatingURL (){
 
   spoonacularURL += "&apiKey="+ APIKey
 
-  console.log(spoonacularURL)
+  
   websiteCall()
 
 }
@@ -172,7 +172,7 @@ function websiteCall(){
       } 
       else{
         $(".recipe").empty();
-        console.log("mangos");
+        
       }
       
     }); 

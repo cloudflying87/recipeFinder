@@ -18,6 +18,7 @@ var drinkCategory = ['gin','vodka','rum']
 
 var incs = 0;
 var weeb = 1;
+var hmmm=1;
 
 categoryCall(foodCategory,foodCategory,".foodOptionsList", "foodie");
 categoryCall(drinkCategory,drinkCategory,".drinkOptions", "drinky");
@@ -25,88 +26,83 @@ categoryCall(drinkCategory,drinkCategory,".drinkOptions", "drinky");
 function categoryCall(category,categoryDisplay,appendPlace,calass) {
     
     for (let index= 0; index < category.length; index++) {
+        
       incs++;  
-      var NewDiv = $('<div>').addClass("form-check form-check-inline")
+        var NewDiv = $('<div>').addClass("form-check form-check-inline")
         var NewInput = $('<input>').addClass("form-check-input checks1 "+calass+" fmp-"+categoryDisplay[index])
-
         NewInput.attr('id', category[index])
         NewInput.attr('type','checkbox')
         NewInput.attr("inds",categoryDisplay[index]);
-        console.log(categoryDisplay[index]+" "+incs)
-        
         var NewLabel = $('<label>').addClass('form-check-label').text(categoryDisplay[index])
         NewDiv.append(NewInput,NewLabel)
-        $(appendPlace).append(NewDiv)   
+        $(appendPlace).append(NewDiv)  
+
     }
 }
+
 writeSelect(intolerances,displayIntolerances,'#intolerances')
 writeSelect(dietrestrictions,displayDietRestrictions,'#diet')
 
 $(".checks1").click(function(){
- //console.log(Ingr);
  
- 
- 
- if(drinkCategory.includes(this.id)){
-   renderDrinks(this.id);
+    if(drinkCategory.includes(this.id)){
+      renderDrinks(this.id);
 
-   $(".drinky").prop('checked', false);
-   $(this).prop('checked',true);
- }
- else{
-  
-  if($(this).prop('checked')){
-    console.log("is checked")
-    $(this).attr("indie",weeb);
-    weeb++;
-    checkInput(this.id);
-  }
-  else{
-    console.log("is not checked")
-    var yesty = this.id;
-    //Ingr = Ingr.replace(yesty, "");
-    var bee = $(this).attr("ind");
-    $(".ingItm-"+$(this).attr("inds")).remove();
-    $(".dtl-"+$(this).attr("inds")).remove();
-    console.log($(this).attr("inds"))
-    if (Ingr.indexOf('+')>-1)
-  {
-    console.log(weeb+" "+hmm)
-    if($(this).attr("indie")==hmm){
-      Ingr = Ingr.replace(yesty+",+", "");
-      
-      hmm++;
-      console.log("700")
-      
-      
+      $(".drinky").prop('checked', false);
+      $(this).prop('checked',true);
     }
     else{
-      Ingr = Ingr.replace(',+'+yesty, "");
-      console.log("800")
-    }
-  }
-  else{
-    Ingr = Ingr.replace(yesty, "");
-    console.log("am i happending");
-    $(".recipe").empty();
-    //console.log("jalapenos")
-  }
+     
+      if($(this).prop('checked')){
+         
+        $(this).attr("indie",weeb);
+         weeb++;
+         checkInput(this.id);
+       
+        }
+      else{
+    
+        var yesty = this.id;
+        $(".ingItm-"+$(this).attr("inds")).remove();
+        $(".dtl-"+$(this).attr("inds")).remove();
+    
+        if (Ingr.indexOf('+')>-1)
+        {
+          if($(this).attr("indie")==hmmm){
+           
+            Ingr = Ingr.replace(yesty+",+", "");
+            hmmm++;
+           }
+    
+          else{
+            
+            Ingr = Ingr.replace(',+'+yesty, "");
+      
+             }
+        }
+        else{
+           Ingr = Ingr.replace(yesty, "");
+           weeb=1;
+           hmmm=1;
+           $(".recipe").empty();
+    
+        }
 
-    
-    console.log(Ingr);
-    
     creatingURL();
 
 
   }
  }
+
  if (createDropdownCalled == 0){
   intoleranceDropDown()
   dietDropDown()
   createDropdownCalled = 1
   $('#foodIngredLabel').text('Food Ingredients')
-} 
-$('#recipeSuggestion').text('Recipe Suggestions For You!!')
+  } 
+
+  $('#recipeSuggestion').text('Recipe Suggestions For You!!')
+
 })
 
 function writeSelect(category,categoryDisplay,appendPlace) {
@@ -117,43 +113,52 @@ function writeSelect(category,categoryDisplay,appendPlace) {
 }
 
 function intoleranceDropDown(){
-  $('#intolerances').removeClass("hide")
-  new SlimSelect({
+
+    $('#intolerances').removeClass("hide")
+    new SlimSelect({
     select: '#intolerances',
     showSearch: false,
     placeholder: 'Food Intolerances',
     onChange: (data) => {
-      intoleranceSelect = ''
-      workingDropdown(data)
+    intoleranceSelect = ''
+    workingDropdown(data)
+
     }
   })
   }
 
 function workingDropdown(data){
+
   for (let i = 0; i < data.length; i++) {
     intoleranceSelect += (data[i].value) +"+"
   }
   creatingURL()
+
 }
 
 function dietDropDown(){
-  $('#diet').removeClass("hide")
-  new SlimSelect({
+
+    $('#diet').removeClass("hide")
+    new SlimSelect({
     select: '#diet',
     showSearch: false,
     placeholder: 'Choose Diet',
     onChange: (data) => {
-      dietSelect = ''
-      workingDropdownDiet(data)
+    dietSelect = ''
+    workingDropdownDiet(data)
+
     }
   })
-  console.log('diet')
+  
   }
 
 function workingDropdownDiet(data){
+
   for (let i = 0; i < data.length; i++) {
+
     dietSelect += (data[i].value) +"+"
-    console.log(dietSelect)
+    
   }
   creatingURL()
+  
 }
