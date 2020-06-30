@@ -60,7 +60,6 @@ function displayButtons(drinks){
     var newLink = $("<a>").addClass("d-block mb-4 h-100");    
     var newImg = $("<img src="+ drinks[index].strDrinkThumb+">").addClass("img-fluid img-thumbnail");
     newImg.css("border","none")
-    //newImg.css({"margin-top":"0px","padding-top":"0px","border-top":"0px"})
     newLink.append(newImg);
     newDiv.append(newText,newLink);
     $(".beverage").prepend(newDiv);
